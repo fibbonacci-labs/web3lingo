@@ -1,9 +1,7 @@
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { routes } from "@/config/routes";
 import { getSession } from "@/lib/auth";
-import { Skeleton } from "@/components/ui/skeleton";
 import { ProfileSettingsForm } from "@/components/forms/profile-settings-form";
 
 export default async function SettingsProfilePage() {

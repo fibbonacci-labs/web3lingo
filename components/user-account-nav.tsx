@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { CreditCard, LogOut, Moon, Settings, Sun } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 
@@ -12,11 +11,8 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 

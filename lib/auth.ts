@@ -89,6 +89,7 @@ export const authOptions: NextAuthOptions = {
     //       },
     //     });
 
+    // email the {url} to user
     //     console.log({ user, url });
     //   },
     // }),

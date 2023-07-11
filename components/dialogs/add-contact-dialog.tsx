@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { PlusIcon } from "lucide-react";
-import email from "next-auth/providers/email";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -18,7 +17,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -32,7 +30,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 export function AddContactModal() {
   const router = useRouter();

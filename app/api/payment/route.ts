@@ -3,8 +3,6 @@ import axios from "axios";
 
 import { env } from "@/env.mjs";
 import { getSession } from "@/lib/auth";
-import { db } from "@/lib/db";
-import { createContactSchema } from "@/lib/validations/contact";
 
 export const GET = async (request: NextRequest) => {
   try {
@@ -58,8 +56,6 @@ export const GET = async (request: NextRequest) => {
         },
       }
     );
-
-    console.log({ response: response.data.data });
 
     return NextResponse.json(
       {

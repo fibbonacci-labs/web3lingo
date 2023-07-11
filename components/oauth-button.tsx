@@ -4,8 +4,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
-import { env } from "@/env.mjs";
-import { routes } from "@/config/routes";
 import { capitalize } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 

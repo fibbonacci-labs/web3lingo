@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { DollarSign } from "lucide-react";
 
 import { routes } from "@/config/routes";
 import { getSession } from "@/lib/auth";

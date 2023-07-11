@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import dayjs from "dayjs";
-import { z } from "zod";
 
 import { db } from "@/lib/db";
 import { hashPassword } from "@/lib/utils";
