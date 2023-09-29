@@ -6,9 +6,9 @@ import { Crisp } from "crisp-sdk-web";
 import { env } from "@/env.mjs";
 
 const CrispChat = () => {
-  useEffect(() => {
+  /* useEffect(() => {
     Crisp.configure(env.NEXT_PUBLIC_CRISP_WEBSITE_ID as string);
-  });
+  }); */
 
   return null;
 };
