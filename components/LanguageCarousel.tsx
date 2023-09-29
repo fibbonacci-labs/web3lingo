@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
 
-import languages from "../utils/courses";
+import courses from "../utils/courses";
 import { ThemeIcon } from "./Flag";
 import { ChevronLeftSvg, ChevronRightSvg } from "./Svgs";
 
@@ -82,7 +82,7 @@ const scrollCarouselRight = ({
 };
 
 export const LanguageCarousel = () => {
-  const setLanguage = useBoundStore((x) => x.setLanguage);
+  const setCourse = useBoundStore((x) => x.setCourse);
 
   const startIndexRef = useRef(0);
   const languagesContainer = useRef<null | HTMLDivElement>(null);
@@ -107,17 +107,17 @@ export const LanguageCarousel = () => {
           className="flex items-center gap-6 overflow-x-hidden"
           ref={languagesContainer}
         >
-          {languages.map((language) => {
+          {courses.map((course) => {
             return (
               <Link
-                key={language.code}
+                key={course.code}
                 className="flex items-center gap-2"
                 href={"/wallets"}
-                onClick={() => setLanguage(language)}
+                onClick={() => setCourse(course)}
               >
-                <ThemeIcon course={language} width={40} />
+                <ThemeIcon course={course} width={40} />
                 <span className="text-sm font-bold uppercase">
-                  {language.name}
+                  {course.name}
                 </span>
               </Link>
             );

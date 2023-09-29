@@ -27,7 +27,7 @@ export const CourseDropDown = () => {
         <ul className="absolute right-0 top-full grid w-[500px] grid-cols-2 rounded-2xl border-2 border-gray-200 bg-white p-6 font-light text-gray-600">
           {courses.map((course) => {
             return (
-              <li key={course.code}>
+              <li key={course.name}>
                 <Link
                   href={`/`}
                   tabIndex={0}

@@ -1,10 +1,9 @@
 import React from "react";
+import { lesson1 } from "@/utils/problems";
 
 import { CheckAnswer } from "@/components/CheckAnswer";
 import { ProgressBar } from "@/components/ProgressBar";
 import { QuitMessage } from "@/components/QuitMessage";
-
-import { lesson1 } from "../pages/lesson";
 
 export const ProblemSelect1Of3 = ({
   problem,

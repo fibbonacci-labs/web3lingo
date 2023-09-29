@@ -24,7 +24,6 @@ export default function MarketingLayout(props: { children: React.ReactNode }) {
           </Link> */}
         </div>
         <div className="ml-auto flex items-center space-x-4">
-          
           <Link
             href={routes.main.signin}
             className={buttonVariants({ variant: "outline" })}

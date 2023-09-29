@@ -104,11 +104,15 @@ export function UserSigninForm() {
                   disabled && "pointer-events-none cursor-not-allowed"
                 )}
               >
-               ¿Olvidó su contraseña?
+                ¿Olvidó su contraseña?
               </Link>
             </p>
-            <Button variant="primary"  isLoading={form.formState.isSubmitting} disabled={disabled}>
-            Iniciar sesión con Email
+            <Button
+              variant="primary"
+              isLoading={form.formState.isSubmitting}
+              disabled={disabled}
+            >
+              Iniciar sesión con Email
             </Button>
           </div>
         </form>
@@ -119,7 +123,7 @@ export function UserSigninForm() {
         </div>
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">
-          O continuar con
+            O continuar con
           </span>
         </div>
       </div>
