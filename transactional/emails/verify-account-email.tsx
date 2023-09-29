@@ -26,7 +26,7 @@ const baseUrl = process.env.VERCEL_URL
   : "http://localhost:3000";
 
 export const VerifyAccountEmail = ({
-  link = `${env.BASE_URL}/reset-password/sad-asd231s-sasdad`,
+  link = `${env.NEXTAUTH_URL}/reset-password/sad-asd231s-sasdad`,
 }: LinearLoginCodeEmailProps) => (
   <Html>
     <Head />

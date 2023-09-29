@@ -4,8 +4,8 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     // NextAuth
-    BASE_URL: z.string().url().optional(),
-    BASE_AUTH_SECRET: z.string().min(1),
+    NEXTAUTH_URL: z.string().url().optional(),
+    NEXTAUTH_SECRET: z.string().min(1),
     // Github OAuth
     //GITHUB_CLIENT_ID: z.string().min(1),
     //GITHUB_CLIENT_SECRET: z.string().min(1),
@@ -29,8 +29,8 @@ export const env = createEnv({
   runtimeEnv: {
     PUBLIC_APP_URL: process.env.PUBLIC_APP_URL,
     // NextAuth
-    BASE_URL: process.env.BASE_URL,
-    BASE_AUTH_SECRET: process.env.BASE_AUTH_SECRET,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     // Github OAuth
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,

@@ -47,7 +47,7 @@ export const POST = async (request: NextRequest) => {
       },
     });
 
-    const resetLink = `${env.BASE_URL}/auth/password-reset/${createdResetPasswordRequest.id}`;
+    const resetLink = `${env.NEXTAUTH_URL}/auth/password-reset/${createdResetPasswordRequest.id}`;
 
     await resend.emails.send({
       from: siteConfig.email,

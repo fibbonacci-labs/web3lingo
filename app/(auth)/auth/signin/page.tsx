@@ -11,7 +11,7 @@ import { Logo } from "@/components/icons/logo";
 
 export default async function SigninPage() {
   const session = await getSession();
-
+ 
   if (session) {
     return redirect(routes.main.dashboard);
   }

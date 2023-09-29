@@ -51,7 +51,7 @@ export const POST = async (request: NextRequest) => {
       },
     });
 
-    const verificationLink = `${env.BASE_URL}/auth/verify-account/${verificationToken.token}`;
+    const verificationLink = `${env.NEXTAUTH_URL}/auth/verify-account/${verificationToken.token}`;
     
     await resend.emails.send({
       from: siteConfig.email,
