@@ -25,7 +25,7 @@ const baseUrl = process.env.VERCEL_URL
   : "http://localhost:3000";
 
 export const ForgotPasswordEmail = ({
-  link = "https://nextedgestarter.com/reset-password/sad-asd231s-sasdad",
+  link = "https://web3lingo.com/reset-password/sad-asd231s-sasdad",
 }: LinearLoginCodeEmailProps) => (
   <Html>
     <Head />

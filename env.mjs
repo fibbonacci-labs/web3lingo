@@ -4,12 +4,12 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     // NextAuth
-    NEXTAUTH_URL: z.string().url().optional(),
-    NEXTAUTH_SECRET: z.string().min(1),
+    BASE_URL: z.string().url().optional(),
+    BASE_AUTH_SECRET: z.string().min(1),
     // Github OAuth
-    GITHUB_CLIENT_ID: z.string().min(1),
-    GITHUB_CLIENT_SECRET: z.string().min(1),
-    GITHUB_TOKEN: z.string().min(1).optional(),
+    //GITHUB_CLIENT_ID: z.string().min(1),
+    //GITHUB_CLIENT_SECRET: z.string().min(1),
+    //GITHUB_TOKEN: z.string().min(1).optional(),
     // Google OAuth
     GOOGLE_CLIENT_ID: z.string().min(1),
     GOOGLE_CLIENT_SECRET: z.string().min(1),
@@ -20,17 +20,17 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
     // Lemon Squeezy
     LEMON_SQUEEZY_API_KEY: z.string().min(1),
-    LEMON_SQUEEZY_WEBHOOK_SECRET: z.string().min(1),
+    //LEMON_SQUEEZY_WEBHOOK_SECRET: z.string().min(1),
   },
   client: {
-    NEXT_PUBLIC_CRISP_WEBSITE_ID: z.string().min(1),
-    NEXT_PUBLIC_APP_URL: z.string().min(1),
+    //NEXT_PUBLIC_CRISP_WEBSITE_ID: z.string().min(1),
+    PUBLIC_APP_URL: z.string().min(1),
   },
   runtimeEnv: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    PUBLIC_APP_URL: process.env.PUBLIC_APP_URL,
     // NextAuth
-    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    BASE_URL: process.env.BASE_URL,
+    BASE_AUTH_SECRET: process.env.BASE_AUTH_SECRET,
     // Github OAuth
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
