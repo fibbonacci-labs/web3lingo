@@ -87,7 +87,7 @@ export function UserSigninForm() {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Contraseña</FormLabel>
                     <FormControl>
                       <Input {...field} disabled={disabled} type="password" />
                     </FormControl>
@@ -104,11 +104,11 @@ export function UserSigninForm() {
                   disabled && "pointer-events-none cursor-not-allowed"
                 )}
               >
-                Forgot your password?
+               ¿Olvidó su contraseña?
               </Link>
             </p>
-            <Button isLoading={form.formState.isSubmitting} disabled={disabled}>
-              Sign in with Email
+            <Button variant="primary"  isLoading={form.formState.isSubmitting} disabled={disabled}>
+            Iniciar sesión con Email
             </Button>
           </div>
         </form>
@@ -119,7 +119,7 @@ export function UserSigninForm() {
         </div>
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
+          O continuar con
           </span>
         </div>
       </div>
@@ -131,14 +131,14 @@ export function UserSigninForm() {
         setLoading={setGoogleLoading}
         isLoading={googleLoading}
       />
-      <OauthButton
+      {/* <OauthButton
         text="Sign up with Github"
         icon={<GithubIcon className="h-4 w-4" />}
         isDisabled={disabled}
         provider="github"
         setLoading={setGithubLoading}
         isLoading={githubLoading}
-      />
+      /> */}
     </div>
   );
 }

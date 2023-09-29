@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 
 import { fontHeading, fontSans } from "@/lib/fonts";
@@ -13,11 +14,13 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({ children }: RootLayoutProps) {
   //const CrispWithNoSSR = dynamic(() => import("@/components/providers/crisp"));
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={inter.className}>
       <head />
       <body
         className={cn(

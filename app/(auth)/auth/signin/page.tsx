@@ -17,7 +17,7 @@ export default async function SigninPage() {
   }
 
   return (
-    <div className="container flex h-screen w-screen flex-col items-center justify-center">
+    <div className="container flex h-screen w-screen flex-col items-center justify-center transition duration-300">
       <Link
         href={routes.main.landing}
         className={cn(
