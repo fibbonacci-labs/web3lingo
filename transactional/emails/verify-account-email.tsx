@@ -14,8 +14,9 @@ import {
   Text,
 } from "@react-email/components";
 
-import { siteConfig } from "../../config/site";
 import { env } from "@/env.mjs";
+
+import { siteConfig } from "../../config/site";
 
 interface LinearLoginCodeEmailProps {
   link?: string;

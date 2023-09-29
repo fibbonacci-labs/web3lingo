@@ -12,6 +12,7 @@ export const routes = {
     error: "/error",
   },
   dashboard: {
+    challenges: "/dashboard/challenges",
     contacts: "/dashboard/contacts",
     settings: "/dashboard/settings",
     billing: "/dashboard/settings/billing",
@@ -21,16 +22,8 @@ export const routes = {
 export const appNavigation = {
   app: [
     {
-      title: "Dashboard",
-      href: routes.main.dashboard,
-    },
-    {
-      title: "Contacts",
-      href: routes.dashboard.contacts,
-    },
-    {
-      title: "Settings",
-      href: routes.dashboard.settings,
+      title: "Retos",
+      href: routes.dashboard.challenges,
     },
   ],
   settings: [
