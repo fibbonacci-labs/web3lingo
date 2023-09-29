@@ -72,7 +72,7 @@ type Payload = {
 export const POST = async (req: NextRequest) => {
   try {
     const rawBody = await req.text();
-    const hmac = crypto.createHmac(
+    /* const hmac = crypto.createHmac(
       "sha256",
       env.LEMON_SQUEEZY_WEBHOOK_SECRET || ""
     );
@@ -80,7 +80,7 @@ export const POST = async (req: NextRequest) => {
     const signature = Buffer.from(
       req.headers.get("x-signature") as string,
       "utf8"
-    );
+    ); 
 
     const octokit = new Octokit({
       auth: env.GITHUB_TOKEN,
@@ -91,8 +91,10 @@ export const POST = async (req: NextRequest) => {
         status: 400,
       });
     }
+    */
 
     const payload = JSON.parse(rawBody);
+    
 
     const {
       meta: { event_name: eventName },
@@ -101,14 +103,14 @@ export const POST = async (req: NextRequest) => {
 
     switch (eventName) {
       case "order_created":
-        await octokit.request("POST /orgs/nextedgestarter/invitations", {
+        /* await octokit.request("POST /orgs/web3lingo/invitations", {
           org: "ORG",
           email: subscription.attributes.user_email,
           role: "direct_member",
           headers: {
             "X-GitHub-Api-Version": "2022-11-28",
           },
-        });
+        }); */
         await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
@@ -116,7 +118,7 @@ export const POST = async (req: NextRequest) => {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: "noreply@nextedgestarter.com",
+            from: "mail@aprendiendodefi.com",
             to: "orenaksakal@gmail.com",
             subject: "Next edge starter Order!",
             html: `<strong>Email to add ${subscription.attributes.user_email}</strong>`,

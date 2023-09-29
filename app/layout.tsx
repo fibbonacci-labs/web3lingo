@@ -32,11 +32,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Analytics />
           <CrispWithNoSSR />
         </ThemeProvider>
-        <Script src="https://api.nextedgestarter.com/latest.js" />
+        <Script src="https://api.web3lingo.com/latest.js" />
         <noscript>
           {/* eslint-disable @next/next/no-img-element */}
           <img
-            src="https://api.nextedgestarter.com/noscript.gif"
+            src="https://api.web3lingo.com/noscript.gif"
             alt=""
             referrerPolicy="no-referrer-when-downgrade"
           />

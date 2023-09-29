@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage() {
       <p className="text-md p-2">
         Contact Us If you have any questions, concerns, or requests regarding
         this Privacy Policy or our privacy practices, please contact us at
-        mail@nextedgestarter.com.
+        mail@web3lingo.com.
       </p>
 
       <p className="text-md p-2">

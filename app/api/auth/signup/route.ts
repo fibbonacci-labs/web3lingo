@@ -51,12 +51,12 @@ export const POST = async (request: NextRequest) => {
       },
     });
 
-    const verificationLink = `${env.NEXTAUTH_URL}/auth/verify-account/${verificationToken.token}`;
-
+    const verificationLink = `${env.BASE_URL}/auth/verify-account/${verificationToken.token}`;
+    
     await resend.emails.send({
       from: siteConfig.email,
       to: email,
-      subject: "Reset your password",
+      subject: "Verify your account",
       react: VerifyAccountEmail({ link: verificationLink }),
     });
 
@@ -70,6 +70,7 @@ export const POST = async (request: NextRequest) => {
       }
     );
   } catch (error) {
+    console.log(error)
     return NextResponse.json(
       {
         error: "Something went wrong, please try again later.",
