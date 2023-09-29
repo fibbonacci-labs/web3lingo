@@ -1,8 +1,9 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+
 import { CheckAnswer } from "@/components/CheckAnswer";
-import { QuitMessage } from "@/components/QuitMessage";
 import { ProgressBar } from "@/components/ProgressBar";
+import { QuitMessage } from "@/components/QuitMessage";
 
 type ContentProps = {
   image: React.ReactNode;

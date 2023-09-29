@@ -1,11 +1,15 @@
-import Link from "next/link";
 import React from "react";
-import { LessonFastForwardEndFailSvg } from "./Svgs";
+import Link from "next/link";
+
 import { QuestionResult } from "./QuestionResult";
 import { ReviewLesson } from "./ReviewLesson";
+import { LessonFastForwardEndFailSvg } from "./Svgs";
 
 export const LessonFastForwardEndFail = ({
-  unitNumber, reviewLessonShown, setReviewLessonShown, questionResults,
+  unitNumber,
+  reviewLessonShown,
+  setReviewLessonShown,
+  questionResults,
 }: {
   unitNumber: number;
   reviewLessonShown: boolean;
@@ -42,7 +46,8 @@ export const LessonFastForwardEndFail = ({
       <ReviewLesson
         reviewLessonShown={reviewLessonShown}
         setReviewLessonShown={setReviewLessonShown}
-        questionResults={questionResults} />
+        questionResults={questionResults}
+      />
     </div>
   );
 };

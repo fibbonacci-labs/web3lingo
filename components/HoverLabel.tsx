@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-
 export const HoverLabel = ({
-  text, textColor,
+  text,
+  textColor,
 }: {
   text: string;
   textColor: `text-${string}`;
@@ -16,7 +16,7 @@ export const HoverLabel = ({
 
   return (
     <div
-      className={`absolute z-10 w-max animate-bounce rounded-lg border-2 border-gray-200 bg-white py-2 px-3 font-bold uppercase ${textColor}`}
+      className={`absolute z-10 w-max animate-bounce rounded-lg border-2 border-gray-200 bg-white px-3 py-2 font-bold uppercase ${textColor}`}
       style={{
         top: "-25%",
         left: `calc(50% - ${width / 2}px)`,

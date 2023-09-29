@@ -1,8 +1,10 @@
 import React from "react";
-import { lesson1 } from "../pages/lesson";
+
 import { CheckAnswer } from "@/components/CheckAnswer";
-import { QuitMessage } from "@/components/QuitMessage";
 import { ProgressBar } from "@/components/ProgressBar";
+import { QuitMessage } from "@/components/QuitMessage";
+
+import { lesson1 } from "../pages/lesson";
 
 export const ProblemSelect1Of3 = ({
   problem,
@@ -49,9 +51,7 @@ export const ProblemSelect1Of3 = ({
         />
 
         <section className="flex max-w-2xl grow flex-col gap-8 self-center sm:items-center sm:justify-center sm:gap-24 sm:px-5">
-          <h1 className="self-start text-4xl font-bold">
-            {question}
-          </h1>
+          <h1 className="self-start text-4xl font-bold">{question}</h1>
           <div
             className="grid grid-cols-2 gap-2 sm:grid-cols-3"
             role="radiogroup"

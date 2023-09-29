@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Logo } from "@/components/icons/logo";
 
+import CourseSwitcher from "./course-switcher";
+import { CurrentCourse } from "./CurrentCourse";
+
 interface MainNavProps {
   children?: React.ReactNode;
   items: any[];
@@ -87,14 +90,6 @@ export function MainNav({ children, items }: MainNavProps) {
                   {item.title}
                 </Link>
               ))}
-              <Link
-                href={routes.dashboard.billing}
-                className={cn(
-                  "text-md flex w-full items-center rounded-md p-3 font-medium"
-                )}
-              >
-                Billing
-              </Link>
             </nav>
             {children}
           </div>

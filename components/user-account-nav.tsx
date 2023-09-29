@@ -32,7 +32,7 @@ export function UserNav({
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            <AvatarImage src={image} alt={name} />
+            <AvatarImage src={image ?? "/avatars/01.png"} alt={name} />
             <AvatarFallback>{getInitials(name)}</AvatarFallback>
           </Avatar>
         </Button>

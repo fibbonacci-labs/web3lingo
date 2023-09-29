@@ -1,8 +1,10 @@
+"use-client";
+
 export const Sidebar = () => {
   return (
     <aside
       id="default-sidebar"
-      className="hidden md:block left-0 top-0 z-40 h-screen w-64"
+      className="left-0 top-0 z-40 hidden h-screen w-64 md:block"
       aria-label="Sidebar"
     >
       <div className="h-full overflow-y-auto px-3 py-4">

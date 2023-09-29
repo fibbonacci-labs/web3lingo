@@ -1,9 +1,9 @@
-import Link from "next/link";
 import React from "react";
-
+import Link from "next/link";
 
 export const QuitMessage = ({
-  quitMessageShown, setQuitMessageShown,
+  quitMessageShown,
+  setQuitMessageShown,
 }: {
   quitMessageShown: boolean;
   setQuitMessageShown: (isShown: boolean) => void;
@@ -11,18 +11,22 @@ export const QuitMessage = ({
   return (
     <>
       <div
-        className={quitMessageShown
-          ? "fixed top-0 bottom-0 left-0 right-0 z-30 bg-black bg-opacity-60 transition-all duration-300"
-          : "pointer-events-none fixed top-0 bottom-0 left-0 right-0 z-30 bg-black bg-opacity-0 transition-all duration-300"}
+        className={
+          quitMessageShown
+            ? "fixed bottom-0 left-0 right-0 top-0 z-30 bg-black bg-opacity-60 transition-all duration-300"
+            : "pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 bg-black bg-opacity-0 transition-all duration-300"
+        }
         onClick={() => setQuitMessageShown(false)}
         aria-label="Close quit message"
         role="button"
       ></div>
 
       <article
-        className={quitMessageShown
-          ? "fixed bottom-0 left-0 right-0 z-40 flex flex-col gap-4 bg-white px-5 py-12 text-center transition-all duration-300 sm:flex-row"
-          : "fixed -bottom-96 left-0 right-0 z-40 flex flex-col bg-white px-5 py-12 text-center transition-all duration-300 sm:flex-row"}
+        className={
+          quitMessageShown
+            ? "fixed bottom-0 left-0 right-0 z-40 flex flex-col gap-4 bg-white px-5 py-12 text-center transition-all duration-300 sm:flex-row"
+            : "fixed -bottom-96 left-0 right-0 z-40 flex flex-col bg-white px-5 py-12 text-center transition-all duration-300 sm:flex-row"
+        }
         aria-hidden={!quitMessageShown}
       >
         <div className="flex grow flex-col gap-4">

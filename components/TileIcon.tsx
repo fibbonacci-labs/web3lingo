@@ -1,24 +1,27 @@
+import type { TileType } from "../utils/courses";
 import {
   ActiveBookSvg,
-  LockedBookSvg,
+  ActiveDumbbellSvg,
+  ActiveTreasureSvg,
+  ActiveTrophySvg,
   CheckmarkSvg,
-  LockedDumbbellSvg,
   FastForwardSvg,
   GoldenBookSvg,
   GoldenDumbbellSvg,
   GoldenTreasureSvg,
-  GoldenTrophySvg, LockSvg,
-  StarSvg,
+  GoldenTrophySvg,
+  LockedBookSvg,
+  LockedDumbbellSvg,
   LockedTreasureSvg,
-  LockedTrophySvg, ActiveTreasureSvg,
-  ActiveTrophySvg,
-  ActiveDumbbellSvg
+  LockedTrophySvg,
+  LockSvg,
+  StarSvg,
 } from "./Svgs";
-import type { TileType } from "../utils/courses";
 import { TileStatus } from "./tileStatus";
 
 export const TileIcon = ({
-  tileType, status,
+  tileType,
+  status,
 }: {
   tileType: TileType;
   status: TileStatus;

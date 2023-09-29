@@ -1,6 +1,14 @@
-import Link from "next/link";
+"use client";
+
 import React, { useState } from "react";
+import Link from "next/link";
 import dayjs from "dayjs";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+
+import { Calendar } from "./Calendar";
+import { ThemeIcon } from "./Flag";
+import type { LoginScreenState } from "./LoginScreen";
 import {
   EmptyFireSvg,
   EmptyGemSvg,
@@ -8,10 +16,6 @@ import {
   GemSvg,
   LingotsTreasureChestSvg,
 } from "./Svgs";
-import { Calendar } from "./Calendar";
-import { useBoundStore } from "../hooks/useBoundStore";
-import { ThemeIcon } from "./Flag";
-import type { LoginScreenState } from "./LoginScreen";
 
 const Streak = () => {
   const streak = useBoundStore((x) => x.streak);

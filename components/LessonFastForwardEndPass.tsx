@@ -1,12 +1,17 @@
-import Link from "next/link";
 import React from "react";
-import { LessonFastForwardEndPassSvg } from "./Svgs";
-import { useBoundStore } from "../hooks/useBoundStore";
+import Link from "next/link";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+
 import { QuestionResult } from "./QuestionResult";
 import { ReviewLesson } from "./ReviewLesson";
+import { LessonFastForwardEndPassSvg } from "./Svgs";
 
 export const LessonFastForwardEndPass = ({
-  unitNumber, reviewLessonShown, setReviewLessonShown, questionResults,
+  unitNumber,
+  reviewLessonShown,
+  setReviewLessonShown,
+  questionResults,
 }: {
   unitNumber: number;
   reviewLessonShown: boolean;
@@ -43,7 +48,8 @@ export const LessonFastForwardEndPass = ({
       <ReviewLesson
         reviewLessonShown={reviewLessonShown}
         setReviewLessonShown={setReviewLessonShown}
-        questionResults={questionResults} />
+        questionResults={questionResults}
+      />
     </div>
   );
 };

@@ -1,19 +1,21 @@
+"use-client";
+
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useBoundStore } from "../hooks/useBoundStore";
+
+import { getTileLeftClassName } from "@/lib/utils";
+import { useBoundStore } from "@/hooks/useBoundStore";
+import { HoverLabel } from "@/components/HoverLabel";
+import { TileIcon } from "@/components/TileIcon";
+import { tileStatus } from "@/components/tileStatus";
+import { UnitHeader } from "@/components/UnitHeader";
+
 import type { Unit } from "../utils/courses";
-import { TileIcon } from "./TileIcon";
-import { tileStatus } from "./tileStatus";
 import { getTileColors } from "./getTileColors";
-import { getTileLeftClassName } from "../pages/wallets";
-import { TileTooltip } from "./TileTooltip";
-import { HoverLabel } from "./HoverLabel";
-import { UnitHeader } from "./UnitHeader";
 import { LessonCompletionSvg } from "./LessonCompletionSvg";
+import { TileTooltip } from "./TileTooltip";
 
-export const UnitSection = ({ unit }: { unit: Unit; }): JSX.Element => {
-  const router = useRouter();
-
+export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
   const [selectedTile, setSelectedTile] = useState<null | number>(null);
 
   useEffect(() => {
@@ -29,15 +31,16 @@ export const UnitSection = ({ unit }: { unit: Unit; }): JSX.Element => {
     (x) => x.increaseLessonsCompleted
   );
   const increaseLingots = useBoundStore((x) => x.increaseLingots);
-    
+
   return (
     <>
       <UnitHeader
         unitNumber={unit.unitNumber}
         description={unit.description}
         backgroundColor={unit.backgroundColor}
-        borderColor={unit.borderColor} />
-      <div className="relative mt-[67px] mb-8 flex max-w-2xl flex-col items-center gap-4">
+        borderColor={unit.borderColor}
+      />
+      <div className="relative mb-8 mt-[67px] flex max-w-2xl flex-col items-center gap-4">
         {unit.subtiles.map((tile, i): JSX.Element => {
           const status = tileStatus(tile, lessonsCompleted);
           return (
@@ -53,7 +56,7 @@ export const UnitSection = ({ unit }: { unit: Unit; }): JSX.Element => {
                       return (
                         <div className="relative">
                           <TileIcon tileType={tile.type} status={status} />
-                          <div className="absolute top-6 left-0 right-0 flex justify-center text-lg font-bold text-yellow-700">
+                          <div className="absolute left-0 right-0 top-6 flex justify-center text-lg font-bold text-yellow-700">
                             {unit.unitNumber}
                           </div>
                         </div>
@@ -73,13 +76,18 @@ export const UnitSection = ({ unit }: { unit: Unit; }): JSX.Element => {
                         {tile.type === "fast-forward" && status === "LOCKED" ? (
                           <HoverLabel
                             text="Jump here?"
-                            textColor={unit.textColor} />
+                            textColor={unit.textColor}
+                          />
                         ) : selectedTile !== i && status === "ACTIVE" ? (
-                          <HoverLabel text="Empieza" textColor={unit.textColor} />
+                          <HoverLabel
+                            text="Empieza"
+                            textColor={unit.textColor}
+                          />
                         ) : null}
                         <LessonCompletionSvg
                           lessonsCompleted={lessonsCompleted}
-                          status={status} />
+                          status={status}
+                        />
                         <button
                           className={[
                             "absolute m-3 rounded-full border-b-8 p-4",
@@ -90,11 +98,13 @@ export const UnitSection = ({ unit }: { unit: Unit; }): JSX.Element => {
                             }),
                           ].join(" ")}
                           onClick={() => {
-                            if (tile.type === "fast-forward" &&
-                              status === "LOCKED") {
-                              void router.push(
-                                `/lesson?fast-forward=${unit.unitNumber}`
-                              );
+                            if (
+                              tile.type === "fast-forward" &&
+                              status === "LOCKED"
+                            ) {
+                              // void router.push(
+                              //   `/lesson?fast-forward=${unit.unitNumber}`
+                              // );
                               return;
                             }
                             setSelectedTile(i);
@@ -157,7 +167,8 @@ export const UnitSection = ({ unit }: { unit: Unit; }): JSX.Element => {
                   }
                 })()}
                 status={status}
-                closeTooltip={closeTooltip} />
+                closeTooltip={closeTooltip}
+              />
             </Fragment>
           );
         })}

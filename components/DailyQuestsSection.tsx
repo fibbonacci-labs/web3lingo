@@ -1,6 +1,6 @@
 import React from "react";
-import { LightningProgressSvg, TreasureProgressSvg } from "./Svgs";
-import { useBoundStore } from "../hooks/useBoundStore";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
 import {
   Card,
   CardContent,
@@ -8,6 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+import { LightningProgressSvg, TreasureProgressSvg } from "./Svgs";
 
 export const DailyQuestsSection = () => {
   const xpToday = useBoundStore((x) => x.xpToday());

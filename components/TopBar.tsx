@@ -1,10 +1,19 @@
-import dayjs from "dayjs";
-import Link from "next/link";
+"use client";
+
 import React, { useState } from "react";
-import { useBoundStore } from "../hooks/useBoundStore";
+import Link from "next/link";
+import dayjs from "dayjs";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+import CourseSwitcher from "@/components/course-switcher";
+import { CurrentCourse } from "@/components/CurrentCourse";
+
 import { Calendar } from "./Calendar";
 import { ThemeIcon } from "./Flag";
 import {
+  AddLanguageSvg,
+  EmptyFireTopBarSvg,
+  EmptyGemTopBarSvg,
   FireSvg,
   GemSvg,
   GlobeIconSvg,
@@ -12,13 +21,7 @@ import {
   MoreOptionsSvg,
   PodcastIconSvg,
 } from "./Svgs";
-import { EmptyFireTopBarSvg } from "./Svgs";
-import { EmptyGemTopBarSvg } from "./Svgs";
-import { AddLanguageSvg } from "./Svgs";
-import { CurrentCourse } from "@/components/CurrentCourse";
 import { UserNav } from "./user-nav";
-import CourseSwitcher from "@/components/course-switcher";
-
 
 type MenuState = "HIDDEN" | "LANGUAGES" | "STREAK" | "GEMS" | "MORE";
 

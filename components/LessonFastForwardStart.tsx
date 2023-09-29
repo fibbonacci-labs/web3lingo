@@ -1,9 +1,11 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+
 import { LessonFastForwardStartSvg } from "./Svgs";
 
 export const LessonFastForwardStart = ({
-  unitNumber, setIsStartingLesson,
+  unitNumber,
+  setIsStartingLesson,
 }: {
   unitNumber: number;
   setIsStartingLesson: React.Dispatch<React.SetStateAction<boolean>>;

@@ -2,7 +2,9 @@ import type { TileType } from "../utils/courses";
 import { TileStatus } from "./tileStatus";
 
 export const getTileColors = ({
-  tileType, status, defaultColors,
+  tileType,
+  status,
+  defaultColors,
 }: {
   tileType: TileType;
   status: TileStatus;

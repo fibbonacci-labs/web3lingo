@@ -1,19 +1,15 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   CaretSortIcon,
   CheckIcon,
   PlusCircledIcon,
-} from "@radix-ui/react-icons"
+} from "@radix-ui/react-icons";
 
-import { cn } from "@/lib/utils"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -22,7 +18,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
   Dialog,
   DialogContent,
@@ -31,21 +27,21 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 const courses_selection = [
   {
@@ -65,25 +61,27 @@ const courses_selection = [
       },
     ],
   },
-]
+];
 
-type Course = (typeof courses_selection)[number]["courses"][number]
+type Course = (typeof courses_selection)[number]["courses"][number];
 
-type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
+type PopoverTriggerProps = React.ComponentPropsWithoutRef<
+  typeof PopoverTrigger
+>;
 
 interface CourseSwitcherProps extends PopoverTriggerProps {}
 
 const defaultCourse: Course = {
-    label: "",
-    value: "",
-  };
+  label: "",
+  value: "",
+};
 
 export default function CourseSwitcher({ className }: CourseSwitcherProps) {
-  const [open, setOpen] = React.useState(false)
-  const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
+  const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false);
   const [selectedCourse, setSelectedCourse] = React.useState<Course>(
     courses_selection[0]?.courses[0] || defaultCourse
-  )
+  );
 
   return (
     <Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
@@ -118,8 +116,8 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
                     <CommandItem
                       key={course.value}
                       onSelect={() => {
-                        setSelectedCourse(course)
-                        setOpen(false)
+                        setSelectedCourse(course);
+                        setOpen(false);
                       }}
                       className="text-sm"
                     >
@@ -146,14 +144,11 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
               ))}
             </CommandList>
             <CommandSeparator />
-            
           </Command>
         </PopoverContent>
       </Popover>
       <DialogContent>
-        <DialogHeader>
-         
-        </DialogHeader>
+        <DialogHeader></DialogHeader>
         <div>
           <div className="space-y-4 py-2 pb-4">
             <div className="space-y-2">
@@ -192,5 +187,5 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

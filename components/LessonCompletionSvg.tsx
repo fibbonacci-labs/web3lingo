@@ -2,13 +2,14 @@ import {
   LessonCompletionSvg0,
   LessonCompletionSvg1,
   LessonCompletionSvg2,
-  LessonCompletionSvg3
+  LessonCompletionSvg3,
 } from "./Svgs";
 import { TileStatus } from "./tileStatus";
 
-
 export const LessonCompletionSvg = ({
-  lessonsCompleted, status, style = {},
+  lessonsCompleted,
+  status,
+  style = {},
 }: {
   lessonsCompleted: number;
   status: TileStatus;

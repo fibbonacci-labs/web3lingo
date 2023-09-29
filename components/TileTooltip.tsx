@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+
 import { units } from "../utils/courses";
-import { TileStatus } from "./tileStatus";
 import { getTileTooltipLeftOffset } from "./getTileTooltipLeftOffset";
+import { TileStatus } from "./tileStatus";
 
 export const TileTooltip = ({
   selectedTile,

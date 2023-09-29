@@ -1,8 +1,9 @@
-import { ChevronDownSvg } from "./Svgs";
 import { useState } from "react";
-import courses from "../utils/courses";
 import Link from "next/link";
+
+import courses from "../utils/courses";
 import { ThemeIcon } from "./Flag";
+import { ChevronDownSvg } from "./Svgs";
 
 export const CourseDropDown = () => {
   const [coursesShown, setCoursesShown] = useState(false);

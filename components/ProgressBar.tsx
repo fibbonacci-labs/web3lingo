@@ -1,7 +1,7 @@
-import Link from "next/link";
 import React from "react";
-import { CloseSvg, LessonTopBarEmptyHeart, LessonTopBarHeart } from "./Svgs";
+import Link from "next/link";
 import { useRouter } from "next/router";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,6 +13,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+
+import { CloseSvg, LessonTopBarEmptyHeart, LessonTopBarHeart } from "./Svgs";
 
 export const ProgressBar = ({
   currentLesson,

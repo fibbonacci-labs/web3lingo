@@ -1,6 +1,8 @@
 import Link from "next/link";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+
 import { GuidebookSvg } from "./Svgs";
-import { useBoundStore } from "../hooks/useBoundStore";
 
 export const UnitHeader = ({
   unitNumber,
@@ -14,7 +16,7 @@ export const UnitHeader = ({
   borderColor: `border-${string}`;
 }) => {
   const course = useBoundStore((x) => x.course);
- 
+
   return (
     <article
       className={["max-w-2xl text-white sm:rounded-xl", backgroundColor].join(

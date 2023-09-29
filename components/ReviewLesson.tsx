@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { BigCloseSvg, DoneSvg } from "./Svgs";
-import { QuestionResult } from "./QuestionResult";
 
+import { QuestionResult } from "./QuestionResult";
+import { BigCloseSvg, DoneSvg } from "./Svgs";
 
 export const ReviewLesson = ({
-  reviewLessonShown, setReviewLessonShown, questionResults,
+  reviewLessonShown,
+  setReviewLessonShown,
+  questionResults,
 }: {
   reviewLessonShown: boolean;
   setReviewLessonShown: React.Dispatch<React.SetStateAction<boolean>>;
   questionResults: QuestionResult[];
 }) => {
-  const [selectedQuestionResult, setSelectedQuestionResult] = useState<null | QuestionResult>(null);
+  const [selectedQuestionResult, setSelectedQuestionResult] =
+    useState<null | QuestionResult>(null);
   return (
     <div
       className={[
@@ -27,7 +30,7 @@ export const ReviewLesson = ({
       ></div>
       <div className="relative flex w-full max-w-4xl flex-col gap-5 rounded-2xl border-2 border-gray-200 bg-white p-8">
         <button
-          className="absolute -top-5 -right-5 rounded-full border-2 border-gray-200 bg-gray-100 p-1 text-gray-400 hover:brightness-90"
+          className="absolute -right-5 -top-5 rounded-full border-2 border-gray-200 bg-gray-100 p-1 text-gray-400 hover:brightness-90"
           onClick={() => setReviewLessonShown(false)}
         >
           <BigCloseSvg className="h-8 w-8" />
@@ -48,16 +51,19 @@ export const ReviewLesson = ({
                     ? "bg-yellow-100 text-yellow-600"
                     : "bg-red-100 text-red-500",
                 ].join(" ")}
-                onClick={() => setSelectedQuestionResult((selectedQuestionResult) => selectedQuestionResult === questionResult
-                  ? null
-                  : questionResult
-                )}
+                onClick={() =>
+                  setSelectedQuestionResult((selectedQuestionResult) =>
+                    selectedQuestionResult === questionResult
+                      ? null
+                      : questionResult
+                  )
+                }
               >
                 <div className="flex justify-between gap-2">
                   <h3 className="font-bold">{questionResult.question}</h3>
                   <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white">
                     {questionResult.yourResponse ===
-                      questionResult.correctResponse ? (
+                    questionResult.correctResponse ? (
                       <DoneSvg className="h-5 w-5" />
                     ) : (
                       <BigCloseSvg className="h-5 w-5" />
@@ -66,7 +72,7 @@ export const ReviewLesson = ({
                 </div>
                 <div>{questionResult.yourResponse}</div>
                 {selectedQuestionResult === questionResult && (
-                  <div className="absolute top-20 left-1 right-1 z-10 rounded-2xl border-2 border-gray-200 bg-white p-3 text-sm tracking-tighter">
+                  <div className="absolute left-1 right-1 top-20 z-10 rounded-2xl border-2 border-gray-200 bg-white p-3 text-sm tracking-tighter">
                     <div
                       className="absolute -top-2 h-3 w-3 rotate-45 border-l-2 border-t-2 border-gray-200 bg-white"
                       style={{ left: "calc(50% - 6px)" }}

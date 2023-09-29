@@ -14,7 +14,7 @@ export default function LemonButton({ text }: { text: string }) {
       onClick={() => {
         saEvent("home_page_purchase_click");
         window.open(
-          "https://nextedgestarter.lemonsqueezy.com/checkout/buy/5224047b-3634-4bfd-b108-bd3abbc5a7ca?embed=1&media=0&discount=0",
+          "https://web3lingo.lemonsqueezy.com/checkout/buy/5224047b-3634-4bfd-b108-bd3abbc5a7ca?embed=1&media=0&discount=0",
           "_blank"
         );
       }}

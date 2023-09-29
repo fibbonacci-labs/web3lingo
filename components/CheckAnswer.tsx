@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BigCloseSvg, DoneSvg } from "./Svgs";
 
 export const CheckAnswer = ({

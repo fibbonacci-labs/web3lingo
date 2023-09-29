@@ -3,7 +3,10 @@ import { units } from "../utils/courses";
 
 export type TileStatus = "LOCKED" | "ACTIVE" | "COMPLETE";
 
-export const tileStatus = (tile: Tile, lessonsCompleted: number): TileStatus => {
+export const tileStatus = (
+  tile: Tile,
+  lessonsCompleted: number
+): TileStatus => {
   const lessonsPerTile = 4;
   const tilesCompleted = Math.floor(lessonsCompleted / lessonsPerTile);
   const tiles = units.flatMap((unit) => unit.subtiles);

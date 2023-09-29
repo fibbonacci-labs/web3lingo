@@ -1,9 +1,11 @@
-import Link from "next/link";
-import { ChevronLeftSvg, ChevronRightSvg } from "./Svgs";
 import React, { useRef } from "react";
+import Link from "next/link";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+
 import languages from "../utils/courses";
-import { useBoundStore } from "../hooks/useBoundStore";
 import { ThemeIcon } from "./Flag";
+import { ChevronLeftSvg, ChevronRightSvg } from "./Svgs";
 
 declare global {
   interface Element {

@@ -1,5 +1,7 @@
 import React from "react";
-import { useBoundStore } from "../hooks/useBoundStore";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+
 import { LockedLeaderboardsSvg } from "./Svgs";
 
 export const UnlockLeaderboardsSection = () => {

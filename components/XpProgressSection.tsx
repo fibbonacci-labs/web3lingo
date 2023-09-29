@@ -1,7 +1,8 @@
-import Link from "next/link";
 import React from "react";
-import { useBoundStore } from "../hooks/useBoundStore";
-import { TreasureClosedSvg } from "./Svgs";
+import Link from "next/link";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -9,8 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
+import { TreasureClosedSvg } from "./Svgs";
 
 export const XpProgressSection = () => {
   const xpToday = useBoundStore((x) => x.xpToday());

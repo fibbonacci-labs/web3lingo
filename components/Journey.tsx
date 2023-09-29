@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+"use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { UpArrowSvg, PracticeExerciseSvg } from "../components/Svgs";
-import courses, { currentInitialCourse } from "../utils/courses";
-import { UnitSection } from "@/components/UnitSection";
-import { Card } from "@/components/ui/card";
+
 import { useBoundStore } from "@/hooks/useBoundStore";
+import { Card } from "@/components/ui/card";
+import { UnitSection } from "@/components/UnitSection";
+
+import courses, { currentInitialCourse } from "../utils/courses";
+import { PracticeExerciseSvg, UpArrowSvg } from "./Svgs";
 
 export const Journey = () => {
   const course = useBoundStore((x) => x.course);

@@ -1,8 +1,10 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+import { useLeaderboardRank } from "@/hooks/useLeaderboard";
+
 import { BronzeLeagueSvg } from "./Svgs";
-import { useBoundStore } from "../hooks/useBoundStore";
-import { useLeaderboardRank } from "../hooks/useLeaderboard";
 
 export const LeaderboardRankSection = () => {
   const xpThisWeek = useBoundStore((x) => x.xpThisWeek());

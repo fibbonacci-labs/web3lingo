@@ -1,13 +1,21 @@
-import Link from "next/link";
 import React from "react";
-import { useBoundStore } from "../hooks/useBoundStore";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { formatTime } from "../utils/dateString";
-import { ReviewLesson } from "@/components/ReviewLesson";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
 import { QuestionResult } from "@/components/QuestionResult";
+import { ReviewLesson } from "@/components/ReviewLesson";
+
+import { formatTime } from "../utils/dateString";
 
 export const LessonComplete = ({
-  correctAnswerCount, incorrectAnswerCount, startTime, endTime, reviewLessonShown, setReviewLessonShown, questionResults,
+  correctAnswerCount,
+  incorrectAnswerCount,
+  startTime,
+  endTime,
+  reviewLessonShown,
+  setReviewLessonShown,
+  questionResults,
 }: {
   correctAnswerCount: number;
   incorrectAnswerCount: number;
@@ -27,7 +35,7 @@ export const LessonComplete = ({
     (x) => x.increaseLessonsCompleted
   );
   return (
-    <div className="flex min-h-screen flex-col gap-5 px-4 py-5 sm:px-0 sm:py-0 bg-[#E9F2FF]">
+    <div className="flex min-h-screen flex-col gap-5 bg-[#E9F2FF] px-4 py-5 sm:px-0 sm:py-0">
       <div className="flex grow flex-col items-center justify-center gap-8 font-bold">
         <h1 className="text-center text-3xl text-yellow-400">
           Lesson Complete!
@@ -51,7 +59,7 @@ export const LessonComplete = ({
               {Math.round(
                 (correctAnswerCount /
                   (correctAnswerCount + incorrectAnswerCount)) *
-                100
+                  100
               )}
               %
             </div>
@@ -67,7 +75,9 @@ export const LessonComplete = ({
             Review lesson
           </button>
           <Link
-            className={"flex w-full items-center justify-center rounded-2xl border-b-4 border-green-600 bg-green-500 p-3 font-bold uppercase text-white transition hover:brightness-105 sm:min-w-[150px] sm:max-w-fit"}
+            className={
+              "flex w-full items-center justify-center rounded-2xl border-b-4 border-green-600 bg-green-500 p-3 font-bold uppercase text-white transition hover:brightness-105 sm:min-w-[150px] sm:max-w-fit"
+            }
             href="/learn"
             onClick={() => {
               increaseXp(correctAnswerCount);
@@ -85,7 +95,8 @@ export const LessonComplete = ({
       <ReviewLesson
         reviewLessonShown={reviewLessonShown}
         setReviewLessonShown={setReviewLessonShown}
-        questionResults={questionResults} />
+        questionResults={questionResults}
+      />
     </div>
   );
 };

@@ -1,9 +1,11 @@
-import Link from "next/link";
-import { CloseSvg, GoogleLogoSvg } from "./Svgs";
 import type { ComponentProps } from "react";
 import React, { useEffect, useRef, useState } from "react";
-import { useBoundStore } from "../hooks/useBoundStore";
+import Link from "next/link";
 import { useRouter } from "next/router";
+
+import { useBoundStore } from "@/hooks/useBoundStore";
+
+import { CloseSvg, GoogleLogoSvg } from "./Svgs";
 
 export type LoginScreenState = "HIDDEN" | "LOGIN" | "SIGNUP";
 
