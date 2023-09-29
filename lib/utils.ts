@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import urlSlug from "url-slug";
 
 import { generateRandomPattern } from "@/lib/pattern";
+import { tileLeftClassNames } from "@/components/tileLeftClassNames";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -61,4 +62,27 @@ export const authErrors: Record<string, string> = {
   CredentialsSignin:
     "Sign in failed. Check the details you provided are correct.",
   default: "Unable to sign in.",
+};
+
+type TileLeftClassName = (typeof tileLeftClassNames)[number];
+
+export const getTileLeftClassName = ({
+  index,
+  unitNumber,
+  tilesLength,
+}: {
+  index: number;
+  unitNumber: number;
+  tilesLength: number;
+}): TileLeftClassName => {
+  if (index >= tilesLength - 1) {
+    return "left-0";
+  }
+
+  const classNames =
+    unitNumber % 2 === 1
+      ? tileLeftClassNames
+      : [...tileLeftClassNames.slice(4), ...tileLeftClassNames.slice(0, 4)];
+
+  return classNames[index % classNames.length] ?? "left-0";
 };
