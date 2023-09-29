@@ -4,7 +4,10 @@ import { redirect } from "next/navigation";
 import { appNavigation, routes } from "@/config/routes";
 import { getSession } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
+import CourseSwitcher from "@/components/course-switcher";
+import { CurrentCourse } from "@/components/CurrentCourse";
 import { MainNav } from "@/components/main-nav";
+import { TopBar } from "@/components/TopBar";
 import { UserNav } from "@/components/user-account-nav";
 
 interface DashboardLayoutProps {
@@ -26,10 +29,9 @@ export default async function DashboardLayout({
         <div className="border-b bg-background">
           <div className="container flex h-16 items-center justify-between py-4">
             <MainNav items={appNavigation.app} />
-            <div className="flex flex-row gap-4">
-              <Link href={routes.dashboard.billing}>
-                <Button variant={"outline"}>Upgrade</Button>
-              </Link>
+            <div className="flex flex-row items-center gap-4">
+              <CourseSwitcher />
+              <CurrentCourse />
               <UserNav
                 name={session?.user?.name}
                 email={session?.user?.email}

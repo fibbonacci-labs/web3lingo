@@ -14,7 +14,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const CrispWithNoSSR = dynamic(() => import("@/components/providers/crisp"));
+  //const CrispWithNoSSR = dynamic(() => import("@/components/providers/crisp"));
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {children}
           <Toaster />
           <Analytics />
-          <CrispWithNoSSR />
+          {/*  <CrispWithNoSSR /> */}
         </ThemeProvider>
         <Script src="https://api.web3lingo.com/latest.js" />
         <noscript>

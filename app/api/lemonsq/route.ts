@@ -94,7 +94,6 @@ export const POST = async (req: NextRequest) => {
     */
 
     const payload = JSON.parse(rawBody);
-    
 
     const {
       meta: { event_name: eventName },

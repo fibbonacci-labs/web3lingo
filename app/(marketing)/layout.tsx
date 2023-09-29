@@ -28,7 +28,7 @@ export default function MarketingLayout(props: { children: React.ReactNode }) {
             href={routes.main.signin}
             className={buttonVariants({ variant: "outline" })}
           >
-            Demo
+            Signin
             <ChevronRight className="ml-1 h-4 w-4" />
           </Link>
         </div>
