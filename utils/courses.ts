@@ -99,6 +99,6 @@ const courses = [
   },
 ] as const;
 
-export const currentInitialCourse = 1;
+export const currentInitialCourse = 0;
 
 export default courses;

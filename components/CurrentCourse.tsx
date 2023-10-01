@@ -48,19 +48,16 @@ const Streak = () => {
         className="absolute top-full z-10 flex flex-col gap-5 rounded-2xl  bg-white p-5 text-black shadow-md "
         style={{
           right: "calc(20%)",
-          width: '50vh',
+          width: "50vh",
           //display: "none",
           display: streakShown ? "flex" : "none",
         }}
       >
-        
         <p className="text-md font-bold text-black">
           {`Complete any lesson, assessment or challenge to start a streak!`}
         </p>
-        <p>
-        {streak} days
-        </p>
-       {/*  <Calendar now={now} setNow={setNow} /> */}
+        <p>{streak} days</p>
+        {/*  <Calendar now={now} setNow={setNow} /> */}
       </div>
     </span>
   );
@@ -90,23 +87,21 @@ export const CurrentCourse = () => {
           {lingots}
         </span>
         <div
-          className="absolute top-full z-10 flex w-72 items-center gap-3 rounded-2xl shadow-md  bg-white p-4"
+          className="absolute top-full z-10 flex w-72 items-center gap-3 rounded-2xl bg-white  p-4 shadow-md"
           style={{
             right: "calc(20%)",
             //display: "none",
             display: gemsShown ? "flex" : "none",
           }}
         >
-          
           <div className="flex flex-col gap-3">
-            <h2 className="text-md font-bold text-black">Start learning on web3lingo to earn crypto</h2>
+            <h2 className="text-md font-bold text-black">
+              Start learning on web3lingo to earn crypto
+            </h2>
             <p className="text-sm text-gray-500">
-            Here’s a look at your weekly activity
+              Here’s a look at your weekly activity
             </p>
-            <p className="text-sm font-normal text-gray-400">
-             {lingots} days
-            </p>
-           
+            <p className="text-sm font-normal text-gray-400">{lingots} days</p>
           </div>
         </div>
       </span>
