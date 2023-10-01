@@ -29,12 +29,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          <Toaster />
-          <Analytics />
-          {/*  <CrispWithNoSSR /> */}
-        </ThemeProvider>
+        {children}
+        <Toaster />
+        <Analytics />
+        {/*  <CrispWithNoSSR /> */}
+
         <Script src="https://api.web3lingo.com/latest.js" />
         <noscript>
           {/* eslint-disable @next/next/no-img-element */}

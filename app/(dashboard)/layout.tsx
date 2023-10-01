@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import courses from "@/utils/courses";
 
 import { appNavigation, routes } from "@/config/routes";
 import { getSession } from "@/lib/auth";
@@ -30,7 +31,7 @@ export default async function DashboardLayout({
           <div className="container flex h-16 items-center justify-between py-4">
             <MainNav items={appNavigation.app} />
             <div className="flex flex-row items-center gap-4">
-              <CourseSwitcher />
+              <CourseSwitcher courses={courses} />
               <CurrentCourse />
               <UserNav
                 name={session?.user?.name}
