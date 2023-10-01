@@ -24,7 +24,7 @@ const Streak = () => {
 
   return (
     <span
-      className="relative flex items-center gap-2 rounded-xl p-3 font-bold text-orange-500 hover:bg-gray-600"
+      className="relative flex items-center gap-2 rounded-xl p-3 font-bold text-orange-500 "
       onMouseEnter={() => setStreakShown(true)}
       onMouseLeave={() => {
         setStreakShown(false);
@@ -45,19 +45,22 @@ const Streak = () => {
         {streak}
       </span>
       <div
-        className="absolute top-full z-10 flex flex-col gap-5 rounded-2xl border-2 border-gray-300 bg-white p-5 text-black"
+        className="absolute top-full z-10 flex flex-col gap-5 rounded-2xl  bg-white p-5 text-black shadow-md "
         style={{
-          left: "calc(50% - 200px)",
-          width: 400,
-          display: "none",
-          //display: streakShown ? "flex" : "none",
+          right: "calc(20%)",
+          width: '50vh',
+          //display: "none",
+          display: streakShown ? "flex" : "none",
         }}
       >
-        <h2 className="text-center text-lg font-bold">Streak</h2>
-        <p className="text-center text-sm font-normal text-gray-400">
-          {`But your streak will reset tomorrow if you don't practice tomorrow. Watch out!`}
+        
+        <p className="text-md font-bold text-black">
+          {`Complete any lesson, assessment or challenge to start a streak!`}
         </p>
-        <Calendar now={now} setNow={setNow} />
+        <p>
+        {streak} days
+        </p>
+       {/*  <Calendar now={now} setNow={setNow} /> */}
       </div>
     </span>
   );
@@ -75,7 +78,7 @@ export const CurrentCourse = () => {
       {/* {Course()} */}
       <Streak />
       <span
-        className="relative flex items-center gap-2 rounded-xl p-3 font-bold text-red-500 hover:bg-gray-600"
+        className="relative flex items-center gap-2 rounded-xl p-3 font-bold text-red-500 "
         onMouseEnter={() => setGemsShown(true)}
         onMouseLeave={() => setGemsShown(false)}
         onClick={() => setGemsShown((x) => !x)}
@@ -87,25 +90,23 @@ export const CurrentCourse = () => {
           {lingots}
         </span>
         <div
-          className="absolute top-full z-10 flex w-72 items-center gap-3 rounded-2xl border-2 border-gray-300 bg-white p-5"
+          className="absolute top-full z-10 flex w-72 items-center gap-3 rounded-2xl shadow-md  bg-white p-4"
           style={{
-            left: "calc(50% - 150px)",
-            display: "none",
-            //display: gemsShown ? "flex" : "none",
+            right: "calc(20%)",
+            //display: "none",
+            display: gemsShown ? "flex" : "none",
           }}
         >
-          <LingotsTreasureChestSvg className="w-24" />
+          
           <div className="flex flex-col gap-3">
-            <h2 className="text-xl font-bold text-black">Lingots</h2>
-            <p className="text-sm font-normal text-gray-400">
-              You have {lingots} {lingots === 1 ? "lingot" : "lingots"}.
+            <h2 className="text-md font-bold text-black">Start learning on web3lingo to earn crypto</h2>
+            <p className="text-sm text-gray-500">
+            Here’s a look at your weekly activity
             </p>
-            <Link
-              className="uppercase text-blue-400 transition hover:brightness-110"
-              href="/shop"
-            >
-              Go to shop
-            </Link>
+            <p className="text-sm font-normal text-gray-400">
+             {lingots} days
+            </p>
+           
           </div>
         </div>
       </span>

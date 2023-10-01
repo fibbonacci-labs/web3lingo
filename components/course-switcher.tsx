@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { Course } from "@/utils/courses";
 import {
   CaretSortIcon,
   CheckIcon,
@@ -8,6 +9,7 @@ import {
 } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
+import { useBoundStore } from "@/hooks/useBoundStore";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,45 +45,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const courses_selection = [
-  {
-    label: "Courses",
-    courses: [
-      {
-        label: "Intro a Blockchain",
-        value: "blockchain101",
-      },
-      {
-        label: "Solidity",
-        value: "solidity",
-      },
-      {
-        label: "Yul",
-        value: "yul",
-      },
-    ],
-  },
-];
-
-type Course = (typeof courses_selection)[number]["courses"][number];
-
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<
   typeof PopoverTrigger
 >;
 
-interface CourseSwitcherProps extends PopoverTriggerProps {}
+interface CourseSwitcherProps extends PopoverTriggerProps {
+  courses: Course[];
+}
 
-const defaultCourse: Course = {
-  label: "",
-  value: "",
-};
-
-export default function CourseSwitcher({ className }: CourseSwitcherProps) {
+export default function CourseSwitcher({
+  className,
+  courses,
+}: CourseSwitcherProps) {
   const [open, setOpen] = React.useState(false);
   const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false);
-  const [selectedCourse, setSelectedCourse] = React.useState<Course>(
-    courses_selection[0]?.courses[0] || defaultCourse
-  );
+  const selectedCourse = useBoundStore((x) => x.course);
+  const setCourse = useBoundStore((x) => x.setCourse);
 
   return (
     <Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
@@ -91,17 +70,17 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            aria-label="Select a team"
+            aria-label="Select a course"
             className={cn("w-[200px] justify-between", className)}
           >
             <Avatar className="mr-2 h-5 w-5">
               <AvatarImage
-                src={`https://avatar.vercel.sh/${selectedCourse.value}.png`}
-                alt={selectedCourse.label}
+                src={`https://avatar.vercel.sh/${selectedCourse.code}.png`}
+                alt={selectedCourse.name}
               />
               <AvatarFallback>SC</AvatarFallback>
             </Avatar>
-            {selectedCourse.label}
+            {selectedCourse.name}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
@@ -109,39 +88,37 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
           <Command>
             <CommandList>
               <CommandInput placeholder="Search course..." />
-              <CommandEmpty>No team found.</CommandEmpty>
-              {courses_selection.map((group) => (
-                <CommandGroup key={group.label} heading={group.label}>
-                  {group.courses.map((course) => (
-                    <CommandItem
-                      key={course.value}
-                      onSelect={() => {
-                        setSelectedCourse(course);
-                        setOpen(false);
-                      }}
-                      className="text-sm"
-                    >
-                      <Avatar className="mr-2 h-5 w-5">
-                        <AvatarImage
-                          src={`https://avatar.vercel.sh/${course.value}.png`}
-                          alt={course.label}
-                          className="grayscale"
-                        />
-                        <AvatarFallback>SC</AvatarFallback>
-                      </Avatar>
-                      {course.label}
-                      <CheckIcon
-                        className={cn(
-                          "ml-auto h-4 w-4",
-                          selectedCourse.value === course.value
-                            ? "opacity-100"
-                            : "opacity-0"
-                        )}
+              <CommandEmpty>No course found.</CommandEmpty>
+              <CommandGroup key={"Courses"} heading="Courses">
+                {courses.map((course) => (
+                  <CommandItem
+                    key={course.code}
+                    onSelect={() => {
+                      setCourse(course);
+                      setOpen(false);
+                    }}
+                    className="text-sm"
+                  >
+                    <Avatar className="mr-2 h-5 w-5">
+                      <AvatarImage
+                        src={`https://avatar.vercel.sh/${selectedCourse.code}.png`}
+                        alt={course.name}
+                        className="grayscale"
                       />
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              ))}
+                      <AvatarFallback>SC</AvatarFallback>
+                    </Avatar>
+                    {course.name}
+                    <CheckIcon
+                      className={cn(
+                        "ml-auto h-4 w-4",
+                        selectedCourse.code === course.code
+                          ? "opacity-100"
+                          : "opacity-0"
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
             </CommandList>
             <CommandSeparator />
           </Command>
@@ -149,10 +126,10 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
       </Popover>
       <DialogContent>
         <DialogHeader></DialogHeader>
-        <div>
+        {/*  <div>
           <div className="space-y-4 py-2 pb-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Team name</Label>
+              <Label htmlFor="name">Course</Label>
               <Input id="name" placeholder="Acme Inc." />
             </div>
             <div className="space-y-2">
@@ -178,7 +155,7 @@ export default function CourseSwitcher({ className }: CourseSwitcherProps) {
               </Select>
             </div>
           </div>
-        </div>
+        </div> */}
         <DialogFooter>
           <Button variant="outline" onClick={() => setShowNewTeamDialog(false)}>
             Cancel
