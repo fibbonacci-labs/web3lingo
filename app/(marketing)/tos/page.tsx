@@ -2,11 +2,11 @@ export default function TosPage() {
   return (
     <div className="container flex flex-col gap-2 pt-14">
       <h1 className="font-heading text-lg">
-        Terms of service for Next Edge Starter
+        Terms of service for Web3lingo
       </h1>
       <p className="text-md p-2">
-        These Terms of Service ("Terms") govern your use of the Next edge
-        starter ("the Service") provided by Next edge starter ("we," "us," or
+        These Terms of Service ("Terms") govern your use of the Web3lingo
+        starter ("the Service") provided by Web3lingo ("we," "us," or
         "our"). By accessing or using the Service, you agree to be bound by
         these Terms. If you do not agree with any part of these Terms, you may
         not use the Service.
@@ -114,7 +114,7 @@ export default function TosPage() {
       </p>
       <p className="text-md p-2">
         Miscellaneous 10.1 Entire Agreement: These Terms constitute the entire
-        agreement between you and Next edge starter regarding the Service and
+        agreement between you and Web3lingo regarding the Service and
         supersede all prior agreements and understandings.
       </p>
       <p className="text-md p-2">
@@ -130,7 +130,7 @@ export default function TosPage() {
         freely assign or transfer these Terms without restriction. If you have
         any questions or concerns regarding these Terms, please contact us at
         [Your contact information]. Please note that these Terms of Service
-        should be customized to your specific Next edge starter and comply with
+        should be customized to your specific Web3lingo and comply with
         applicable laws and regulations. It is advisable to seek legal advice to
         ensure compliance with relevant legal requirements.
       </p>

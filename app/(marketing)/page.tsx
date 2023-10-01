@@ -146,7 +146,7 @@ export default function LandingPage() {
 }
 
 export const metadata: Metadata = {
-  title: "Next Edge Starter - The ultimate Next.js starter kit",
+  title: "Web3lingo | Aprende crypto de manera facil y divertida",
   description:
-    "Next Edge Starter is enterprise ready comprehensive Next.js starter kit for building and launching modern web applications.",
+    "Web3lingo es la mejor manera de aprender crypto, blockchain y web3 de manera muy didactica",
 };

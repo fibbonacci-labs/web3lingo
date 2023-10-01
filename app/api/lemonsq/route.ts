@@ -119,7 +119,7 @@ export const POST = async (req: NextRequest) => {
           body: JSON.stringify({
             from: "mail@aprendiendodefi.com",
             to: "orenaksakal@gmail.com",
-            subject: "Next edge starter Order!",
+            subject: "Web3lingo subscription!",
             html: `<strong>Email to add ${subscription.attributes.user_email}</strong>`,
           }),
         });
