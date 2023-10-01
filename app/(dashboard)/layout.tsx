@@ -1,14 +1,11 @@
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import courses from "@/utils/courses";
 
 import { appNavigation, routes } from "@/config/routes";
 import { getSession } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
 import CourseSwitcher from "@/components/course-switcher";
 import { CurrentCourse } from "@/components/CurrentCourse";
 import { MainNav } from "@/components/main-nav";
-import { TopBar } from "@/components/TopBar";
 import { UserNav } from "@/components/user-account-nav";
 
 interface DashboardLayoutProps {

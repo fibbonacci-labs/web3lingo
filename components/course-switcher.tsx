@@ -50,7 +50,7 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 >;
 
 interface CourseSwitcherProps extends PopoverTriggerProps {
-  courses: Course[];
+  courses: readonly Course[];
 }
 
 export default function CourseSwitcher({

@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 import { useBoundStore } from "@/hooks/useBoundStore";
 import CourseSwitcher from "@/components/course-switcher";
 import { CurrentCourse } from "@/components/CurrentCourse";
+import courses from "@/utils/courses";
 
 import { Calendar } from "./Calendar";
 import { ThemeIcon } from "./Flag";
@@ -202,7 +203,7 @@ export const TopBar = ({
               Home
             </a>
           </li> */}
-            <CourseSwitcher />
+            <CourseSwitcher courses={courses}/>
 
             <CurrentCourse />
             <UserNav />
