@@ -102,7 +102,7 @@ export const TileTooltip = ({
             className="w-full rounded-xl bg-gray-200 p-3 uppercase text-gray-400"
             disabled
           >
-            Locked
+            Bloqueado
           </button>
         ) : (
           <Link

@@ -5,6 +5,13 @@ import { useRouter } from "next/router";
 
 import { getTileLeftClassName } from "@/lib/utils";
 import { useBoundStore } from "@/hooks/useBoundStore";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { HoverLabel } from "@/components/HoverLabel";
 import { TileIcon } from "@/components/TileIcon";
 import { tileStatus } from "@/components/tileStatus";
@@ -43,6 +50,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
       <div className="relative mb-8 mt-[67px] flex max-w-2xl flex-col items-center gap-4">
         {unit.subtiles.map((tile, i): JSX.Element => {
           const status = tileStatus(tile, lessonsCompleted);
+          console.log(status);
           return (
             <Fragment key={i}>
               {(() => {
@@ -63,15 +71,28 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                       );
                     }
                     return (
-                      <div
+                      <Card
                         className={[
-                          "relative -mb-4 h-[93px] w-[98px]",
+                          "relative -mb-4 w-9/12 cursor-pointer shadow-sm",
+                          status === "LOCKED" ? "bg-gray-100" : "bg-white",
                           getTileLeftClassName({
                             index: i,
                             unitNumber: unit.unitNumber,
                             tilesLength: unit.subtiles.length,
                           }),
                         ].join(" ")}
+                        onClick={() => {
+                          if (
+                            tile.type === "fast-forward" &&
+                            status === "LOCKED"
+                          ) {
+                            // void router.push(
+                            //   `/lesson?fast-forward=${unit.unitNumber}`
+                            // );
+                            return;
+                          }
+                          setSelectedTile(i);
+                        }}
                       >
                         {tile.type === "fast-forward" && status === "LOCKED" ? (
                           <HoverLabel
@@ -84,36 +105,13 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                             textColor={unit.textColor}
                           />
                         ) : null}
-                        <LessonCompletionSvg
-                          lessonsCompleted={lessonsCompleted}
-                          status={status}
-                        />
-                        <button
-                          className={[
-                            "absolute m-3 rounded-full border-b-8 p-4",
-                            getTileColors({
-                              tileType: tile.type,
-                              status,
-                              defaultColors: `${unit.borderColor} ${unit.backgroundColor}`,
-                            }),
-                          ].join(" ")}
-                          onClick={() => {
-                            if (
-                              tile.type === "fast-forward" &&
-                              status === "LOCKED"
-                            ) {
-                              // void router.push(
-                              //   `/lesson?fast-forward=${unit.unitNumber}`
-                              // );
-                              return;
-                            }
-                            setSelectedTile(i);
-                          }}
-                        >
+
+                        <div className={["m-3 flex  p-4 "].join(" ")}>
                           <TileIcon tileType={tile.type} status={status} />
+                          <p className="px-2 font-bold">{tile.description}</p>
                           <span className="sr-only">Show lesson</span>
-                        </button>
-                      </div>
+                        </div>
+                      </Card>
                     );
                   case "treasure":
                     return (
