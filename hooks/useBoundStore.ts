@@ -3,8 +3,8 @@ import { create } from "zustand";
 
 import type { GoalXpSlice } from "../stores/createGoalXpStore";
 import { createGoalXpSlice } from "../stores/createGoalXpStore";
-import type { CourseSlice } from "../stores/createLanguageStore";
-import { createCourseSlice } from "../stores/createLanguageStore";
+import type { CourseSlice } from "../stores/createCourseStore";
+import { createCourseSlice } from "../stores/createCourseStore";
 import type { LessonSlice } from "../stores/createLessonStore";
 import { createLessonSlice } from "../stores/createLessonStore";
 import type { LingotSlice } from "../stores/createLingotStore";

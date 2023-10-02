@@ -1,8 +1,10 @@
-export type Course = (typeof courses)[number];
+export const currentInitialCourse = 0;
+
 
 export type Unit = {
   title: string;
   unitNumber: number;
+  slug: string;
   description: string;
   backgroundColor: `bg-${string}`;
   textColor: `text-${string}`;
@@ -21,9 +23,11 @@ export type TileType = Tile["type"];
 
 export const units: readonly Unit[] = [
   {
-    unitNumber: 1,
+    unitNumber: 0,
     title: "Blockchain 101",
-    description: "",
+    description:
+      "Fundamentos del blockchain, criptomonedas, sus aplicaciones del mundo real con este curso introductorio de 10 semanas de duración.",
+    slug: "blockchain-101",
     backgroundColor: "bg-primary",
     textColor: "text-[#3B0764]",
     borderColor: "border-[#6B21A8]",
@@ -52,7 +56,9 @@ export const units: readonly Unit[] = [
   {
     unitNumber: 1,
     title: "NFTs 101",
-    description: "",
+    description:
+      "Fundamentos de los NFTs con este curso introductorio de 8 semanas de duración.",
+    slug: "nft-101",
     backgroundColor: "bg-primary",
     textColor: "text-[#3B0764]",
     borderColor: "border-[#6B21A8]",
@@ -80,25 +86,12 @@ export const units: readonly Unit[] = [
   },
 ];
 
-const courses = [
-  {
-    name: "Blockchain 101",
-    description:
-      "Fundamentos del blockchain, criptomonedas, sus aplicaciones del mundo real con este curso introductorio de 10 semanas de duración.",
-    href: "/blockchain-101",
-    code: "blockchain",
-    roadmap: units[0] as Unit,
-  },
-  {
-    name: "NFT 101",
-    description:
-      "Fundamentos de los NFTs con este curso introductorio de 8 semanas de duración.",
-    href: "/nft-101",
-    code: "nft",
-    roadmap: units[1] as Unit,
-  },
-] as const;
 
-export const currentInitialCourse = 0;
+export const defaultCourse: Unit = {
+  ...units[0] as Unit
+} as const;
 
-export default courses;
+
+
+
+export default units;
