@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { BiWalletAlt } from "react-icons/bi";
-import { FaEthereum } from "react-icons/fa";
+import { FaEthereum, FaLock } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
 
 export const homeIcon = <GoHome style={{ fontSize: "40px" }} />;
@@ -288,11 +288,11 @@ export const GoldenShineSvg = () => {
 };
 
 export const StarSvg = () => {
-  return <BiWalletAlt style={{ fontSize: "40px", color: "white" }} />;
+  return <BiWalletAlt style={{ fontSize: "40px", color: "grey" }} />;
 };
 
 export const LockedBookSvg = () => {
-  return <FaEthereum style={{ fontSize: "40px", color: "white" }} />;
+  return <FaEthereum style={{ fontSize: "40px", color: "grey" }} />;
 };
 
 export const ActiveBookSvg = () => {

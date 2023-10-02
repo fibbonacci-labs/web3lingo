@@ -25,7 +25,7 @@ export default function LemonButton({ text }: { text: string }) {
       {success || error ? (
         <section className="relative w-full">
           <div className="shadow-outline-gray animate-fade-bottom  flex items-start space-x-2 rounded-[9px] bg-purple-200 px-6 py-4 ">
-            <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border-purple-600 bg-purple-500">
+            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-purple-600 bg-purple-500">
               🥳
             </div>
             <div className="text-xs sm:text-sm">
