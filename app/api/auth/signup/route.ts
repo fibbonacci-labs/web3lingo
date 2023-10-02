@@ -25,7 +25,7 @@ export const POST = async (request: NextRequest) => {
     if (userExists) {
       return NextResponse.json(
         {
-          error: "This email is already registered.",
+          error: "Este correo electrónico ya está registrado.",
         },
         {
           status: 400,
@@ -63,7 +63,7 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json(
       {
         message:
-          "Signup successful. Please check your email to verify your account.",
+          "Registro realizado con éxito. Compruebe su correo electrónico para verificar su cuenta.",
       },
       {
         status: 200,

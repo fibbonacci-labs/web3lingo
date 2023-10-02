@@ -1,15 +1,13 @@
 export default function TosPage() {
   return (
     <div className="container flex flex-col gap-2 pt-14">
-      <h1 className="font-heading text-lg">
-        Terms of service for Web3lingo
-      </h1>
+      <h1 className="font-heading text-lg">Terms of service for Web3lingo</h1>
       <p className="text-md p-2">
         These Terms of Service ("Terms") govern your use of the Web3lingo
-        starter ("the Service") provided by Web3lingo ("we," "us," or
-        "our"). By accessing or using the Service, you agree to be bound by
-        these Terms. If you do not agree with any part of these Terms, you may
-        not use the Service.
+        starter ("the Service") provided by Web3lingo ("we," "us," or "our"). By
+        accessing or using the Service, you agree to be bound by these Terms. If
+        you do not agree with any part of these Terms, you may not use the
+        Service.
       </p>
       <p className="text-md p-2">
         Use of the Service 1.1 Eligibility: You must be at least 18 years old or
@@ -114,8 +112,8 @@ export default function TosPage() {
       </p>
       <p className="text-md p-2">
         Miscellaneous 10.1 Entire Agreement: These Terms constitute the entire
-        agreement between you and Web3lingo regarding the Service and
-        supersede all prior agreements and understandings.
+        agreement between you and Web3lingo regarding the Service and supersede
+        all prior agreements and understandings.
       </p>
       <p className="text-md p-2">
         10.2 Severability: If any provision of these Terms is found to be

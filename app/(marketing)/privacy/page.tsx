@@ -1,17 +1,15 @@
 export default function PrivacyPolicyPage() {
   return (
     <div className="container flex flex-col gap-2 pt-14">
-      <h1 className="font-heading text-lg">
-        Privacy Policy for Web3lingo
-      </h1>
+      <h1 className="font-heading text-lg">Privacy Policy for Web3lingo</h1>
 
       <p className="text-md p-2">
-        This Privacy Policy describes how Web3lingo ("we," "us," or
-        "our") collects, uses, and discloses personal information when you use
-        our SaaS Starter Boilerplate ("the Service"). We are committed to
-        protecting your privacy and ensuring the security of your personal
-        information. By using the Service, you consent to the practices
-        described in this Privacy Policy.
+        This Privacy Policy describes how Web3lingo ("we," "us," or "our")
+        collects, uses, and discloses personal information when you use our SaaS
+        Starter Boilerplate ("the Service"). We are committed to protecting your
+        privacy and ensuring the security of your personal information. By using
+        the Service, you consent to the practices described in this Privacy
+        Policy.
       </p>
 
       <p className="text-md p-2">

@@ -25,7 +25,7 @@ export default async function SignupPage() {
           "absolute right-4 top-4 md:right-8 md:top-8"
         )}
       >
-        <>Already have an account? Sign in</>
+        <>¿Ya tiene una cuenta? Iniciar sesión</>
       </Link>
       <div
         className="hidden h-full opacity-50 lg:block"
@@ -36,10 +36,10 @@ export default async function SignupPage() {
           <div className="flex flex-col space-y-2 text-center">
             <Logo className="mx-auto h-6 w-6" />
             <h1 className="font-heading text-2xl font-semibold tracking-tight">
-              Create an account
+              Crea una cuenta
             </h1>
             <p className="text-sm text-muted-foreground">
-              Enter your email below to create your account
+              Introduzca su correo electrónico para crear su cuenta
             </p>
           </div>
           <UserSignupForm />
