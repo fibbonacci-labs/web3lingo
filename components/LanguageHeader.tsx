@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { CourseDropDown } from "./CourseDropDown";
+
 
 export const CourseHeader = () => {
   return (

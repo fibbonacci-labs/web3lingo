@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useBoundStore } from "@/hooks/useBoundStore";
 
 import courses from "../utils/courses";
-import { ThemeIcon } from "./Flag";
 import { ChevronLeftSvg, ChevronRightSvg } from "./Svgs";
 
 declare global {
@@ -110,14 +109,14 @@ export const LanguageCarousel = () => {
           {courses.map((course) => {
             return (
               <Link
-                key={course.code}
+                key={course.slug}
                 className="flex items-center gap-2"
                 href={"/wallets"}
                 onClick={() => setCourse(course)}
               >
-                <ThemeIcon course={course} width={40} />
+               {/*  <ThemeIcon course={course} width={40} /> */}
                 <span className="text-sm font-bold uppercase">
-                  {course.name}
+                  {course.title}
                 </span>
               </Link>
             );

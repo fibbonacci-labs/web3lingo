@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import courses from "@/utils/courses";
 import dayjs from "dayjs";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
 import CourseSwitcher from "@/components/course-switcher";
 import { CurrentCourse } from "@/components/CurrentCourse";
-import courses from "@/utils/courses";
 
 import { Calendar } from "./Calendar";
-import { ThemeIcon } from "./Flag";
+//import { ThemeIcon } from "./Flag";
 import {
   AddLanguageSvg,
   EmptyFireTopBarSvg,
@@ -48,7 +48,7 @@ export const TopBar = ({
             setMenu((x) => (x === "LANGUAGES" ? "HIDDEN" : "LANGUAGES"))
           }
         >
-          <ThemeIcon course={course} width={45} />
+         {/*  <ThemeIcon course={course} width={45} /> */}
           <span className="sr-only">See courses</span>
         </button>
 
@@ -95,9 +95,9 @@ export const TopBar = ({
                   <div className="flex gap-5 p-5">
                     <div className="flex flex-col items-center justify-between gap-2">
                       <div className="rounded-2xl border-4 border-blue-400">
-                        <ThemeIcon course={course} width={80} />
+                      {/*   <ThemeIcon course={course} width={80} /> */}
                       </div>
-                      <span className="font-bold">{course.name}</span>
+                      <span className="font-bold">{course.title}</span>
                     </div>
                     <Link
                       className="flex flex-col items-center justify-between gap-2"
@@ -203,7 +203,7 @@ export const TopBar = ({
               Home
             </a>
           </li> */}
-            <CourseSwitcher courses={courses}/>
+            <CourseSwitcher courses={courses} />
 
             <CurrentCourse />
             <UserNav />

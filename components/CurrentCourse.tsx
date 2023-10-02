@@ -1,14 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import dayjs from "dayjs";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
 
-import { Calendar } from "./Calendar";
-import { ThemeIcon } from "./Flag";
-import type { LoginScreenState } from "./LoginScreen";
 import {
   EmptyFireSvg,
   EmptyGemSvg,
@@ -65,9 +61,6 @@ const Streak = () => {
 
 export const CurrentCourse = () => {
   const lingots = useBoundStore((x) => x.lingots);
-  const course = useBoundStore((x) => x.course);
-  const [languagesShown, setLanguagesShown] = useState(false);
-  const [now, setNow] = useState(dayjs());
   const [gemsShown, setGemsShown] = useState(false);
 
   return (
@@ -107,45 +100,5 @@ export const CurrentCourse = () => {
       </span>
     </article>
   );
-
-  function Course() {
-    return (
-      <div
-        className="relative flex cursor-default items-center gap-2 rounded-xl p-3 font-bold uppercase text-gray-500 hover:bg-gray-100"
-        onMouseEnter={() => setLanguagesShown(true)}
-        onMouseLeave={() => setLanguagesShown(false)}
-        onClick={() => setLanguagesShown((x) => !x)}
-        role="button"
-        tabIndex={0}
-      >
-        <ThemeIcon course={course} width={45} />
-        <div>{course.name}</div>
-        <div
-          className="absolute top-full z-10 rounded-2xl border-2 border-gray-300 bg-white"
-          style={{
-            left: "calc(50% - 150px)",
-            width: 300,
-            display: languagesShown ? "block" : "none",
-          }}
-        >
-          <h2 className="px-5 py-3 font-bold uppercase text-gray-400">
-            Mis cursos
-          </h2>
-          <button className="flex w-full items-center gap-3 border-t-2 border-gray-300 bg-blue-100 px-5 py-3 text-left font-bold">
-            <ThemeIcon course={course} width={45} />
-            <span className="text-blue-500">{course.name}</span>
-          </button>
-          <Link
-            className="flex w-full items-center gap-3 rounded-b-2xl border-t-2 border-gray-300 px-5 py-3 text-left font-bold hover:bg-gray-100"
-            href="/register"
-          >
-            <span className="flex items-center justify-center rounded-lg border-2 border-gray-400 px-2 text-lg font-bold text-gray-400">
-              +
-            </span>
-            <span className="text-gray-600">Cambiar de curso</span>
-          </Link>
-        </div>
-      </div>
-    );
-  }
+ 
 };
