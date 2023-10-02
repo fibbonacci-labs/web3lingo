@@ -6,6 +6,7 @@ import { getTileTooltipLeftOffset } from "./getTileTooltipLeftOffset";
 import { TileStatus } from "./tileStatus";
 
 export const TileTooltip = ({
+  slug,
   selectedTile,
   index,
   unitNumber,
@@ -14,6 +15,7 @@ export const TileTooltip = ({
   status,
   closeTooltip,
 }: {
+  slug: string;
   selectedTile: number | null;
   index: number;
   unitNumber: number;
@@ -89,13 +91,13 @@ export const TileTooltip = ({
         </div>
         {status === "ACTIVE" ? (
           <Link
-            href="/lesson"
+            href={`/lesson/${slug}`}
             className={[
               "flex w-full items-center justify-center rounded-xl border-b-4 border-gray-200 bg-white p-3 uppercase",
               activeTextColor,
             ].join(" ")}
           >
-            Start +10 XP
+            Empieza +10 XP
           </Link>
         ) : status === "LOCKED" ? (
           <button
@@ -106,7 +108,7 @@ export const TileTooltip = ({
           </button>
         ) : (
           <Link
-            href="/lesson"
+            href={`/lesson/${slug}`}
             className="flex w-full items-center justify-center rounded-xl border-b-4 border-yellow-200 bg-white p-3 uppercase text-yellow-400"
           >
             Practice +5 XP

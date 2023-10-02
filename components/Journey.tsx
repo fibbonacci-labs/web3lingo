@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
-import { Card } from "@/components/ui/card";
 import { UnitSection } from "@/components/UnitSection";
 
-import courses, { currentInitialCourse } from "../utils/courses";
 import { PracticeExerciseSvg, UpArrowSvg } from "./Svgs";
 
 export const Journey = () => {
@@ -23,9 +21,7 @@ export const Journey = () => {
   return (
     <div className="flex grow justify-center py-5">
       <div className="flex max-w-sm flex-col">
-        {course && (
-          <UnitSection unit={course.roadmap} key={course.roadmap.unitNumber} />
-        )}
+        {course && <UnitSection unit={course} key={course.slug} />}
         <div className="sticky bottom-28 left-0 right-0 flex items-end justify-between">
           <Link
             href="/lesson?practice"

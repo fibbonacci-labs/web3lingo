@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import { lesson1 } from "@/utils/problems";
 
 import { CheckAnswer } from "@/components/CheckAnswer";
 import { ProgressBar } from "@/components/ProgressBar";
-import { QuitMessage } from "@/components/QuitMessage";
+
+//import { QuitMessage } from "@/components/QuitMessage";
 
 export const ProblemSelect1Of3 = ({
   problem,
@@ -89,11 +92,12 @@ export const ProblemSelect1Of3 = ({
         onFinish={onFinish}
         onSkip={onSkip}
       />
+      {/* 
 
       <QuitMessage
         quitMessageShown={quitMessageShown}
         setQuitMessageShown={setQuitMessageShown}
-      />
+      /> */}
     </div>
   );
 };

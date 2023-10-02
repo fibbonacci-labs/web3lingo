@@ -28,7 +28,7 @@ export const ReviewLesson = ({
         ].join(" ")}
         onClick={() => setReviewLessonShown(false)}
       ></div>
-      <div className="relative flex w-full max-w-4xl flex-col gap-5 rounded-2xl border-2 border-gray-200 bg-white p-8">
+      <div className="relative flex w-full max-w-4xl flex-col gap-5 rounded-2xl bg-white p-8 shadow-sm">
         <button
           className="absolute -right-5 -top-5 rounded-full border-2 border-gray-200 bg-gray-100 p-1 text-gray-400 hover:brightness-90"
           onClick={() => setReviewLessonShown(false)}
@@ -36,9 +36,9 @@ export const ReviewLesson = ({
           <BigCloseSvg className="h-8 w-8" />
           <span className="sr-only">Close</span>
         </button>
-        <h2 className="text-center text-3xl">Check out your scorecard!</h2>
+        <h2 className="text-center text-3xl">Felicidades!</h2>
         <p className="text-center text-xl text-gray-400">
-          Click the tiles below to reveal the solutions
+          Haz completado las lecciones
         </p>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {questionResults.map((questionResult, i) => {

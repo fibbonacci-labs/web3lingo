@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
 import { CheckAnswer } from "@/components/CheckAnswer";
 import { ProgressBar } from "@/components/ProgressBar";
-import { QuitMessage } from "@/components/QuitMessage";
+
+//import { QuitMessage } from "@/components/QuitMessage";
 
 type ContentProps = {
   image: React.ReactNode;
@@ -83,11 +86,12 @@ export const ProblemWriteInEnglish = ({
         onFinish={onFinish}
         onSkip={onSkip}
       />
+      {/* 
 
       <QuitMessage
         quitMessageShown={quitMessageShown}
         setQuitMessageShown={setQuitMessageShown}
-      />
+      /> */}
     </div>
   );
 };

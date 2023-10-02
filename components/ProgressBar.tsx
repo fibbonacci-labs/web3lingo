@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import {
   AlertDialog,
@@ -29,7 +31,6 @@ export const ProgressBar = ({
   onExit: () => void;
   hearts: null | number;
 }) => {
-  const router = useRouter();
   return (
     <>
       <div className="fixed left-0 right-0 top-0 z-10 bg-[#FBF9F4]">

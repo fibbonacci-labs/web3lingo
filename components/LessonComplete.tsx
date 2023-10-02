@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
+import { formatTime } from "@/utils/dateString";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
 import { QuestionResult } from "@/components/QuestionResult";
 import { ReviewLesson } from "@/components/ReviewLesson";
-
-import { formatTime } from "../utils/dateString";
 
 export const LessonComplete = ({
   correctAnswerCount,
@@ -25,8 +24,8 @@ export const LessonComplete = ({
   setReviewLessonShown: React.Dispatch<React.SetStateAction<boolean>>;
   questionResults: QuestionResult[];
 }) => {
-  const router = useRouter();
-  const isPractice = "practice" in router.query;
+  const searchParams = useSearchParams();
+  const isPractice = "practice" in searchParams;
 
   const increaseXp = useBoundStore((x) => x.increaseXp);
   const addToday = useBoundStore((x) => x.addToday);
@@ -35,15 +34,15 @@ export const LessonComplete = ({
     (x) => x.increaseLessonsCompleted
   );
   return (
-    <div className="flex min-h-screen flex-col gap-5 bg-[#E9F2FF] px-4 py-5 sm:px-0 sm:py-0">
+    <div className="flex min-h-screen flex-col gap-5 bg-background px-4 py-5 sm:px-0 sm:py-0">
       <div className="flex grow flex-col items-center justify-center gap-8 font-bold">
-        <h1 className="text-center text-3xl text-yellow-400">
-          Lesson Complete!
+        <h1 className="text-black-400 text-center text-3xl">
+          Leccion Completada!
         </h1>
         <div className="flex flex-wrap justify-center gap-5">
-          <div className="min-w-[110px] rounded-xl border-2 border-yellow-400 bg-yellow-400">
+          <div className="min-w-[110px] rounded-xl border-2 border-purple-400 bg-purple-400">
             <h2 className="py-1 text-center text-white">Total XP</h2>
-            <div className="flex justify-center rounded-xl bg-white py-4 text-yellow-400">
+            <div className="flex justify-center rounded-xl bg-white py-4 text-purple-400">
               {correctAnswerCount}
             </div>
           </div>
@@ -53,9 +52,9 @@ export const LessonComplete = ({
               {formatTime(endTime.current - startTime.current)}
             </div>
           </div>
-          <div className="min-w-[110px] rounded-xl border-2 border-green-400 bg-green-400">
+          <div className="min-w-[110px] rounded-xl border-2 border-teal-400 bg-teal-400">
             <h2 className="py-1 text-center text-white">Amazing</h2>
-            <div className="flex justify-center rounded-xl bg-white py-4 text-green-400">
+            <div className="flex justify-center rounded-xl bg-white py-4 text-teal-400">
               {Math.round(
                 (correctAnswerCount /
                   (correctAnswerCount + incorrectAnswerCount)) *
@@ -76,9 +75,9 @@ export const LessonComplete = ({
           </button>
           <Link
             className={
-              "flex w-full items-center justify-center rounded-2xl border-b-4 border-green-600 bg-green-500 p-3 font-bold uppercase text-white transition hover:brightness-105 sm:min-w-[150px] sm:max-w-fit"
+              "flex w-full items-center justify-center rounded-2xl border-b-4 border-purple-600 bg-purple-500 p-3 font-bold uppercase text-white transition hover:brightness-105 sm:min-w-[150px] sm:max-w-fit"
             }
-            href="/learn"
+            href="/dashboard"
             onClick={() => {
               increaseXp(correctAnswerCount);
               addToday();
@@ -88,7 +87,7 @@ export const LessonComplete = ({
               }
             }}
           >
-            Continue
+            Continuar
           </Link>
         </div>
       </section>

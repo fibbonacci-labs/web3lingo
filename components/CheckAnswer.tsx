@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { BigCloseSvg, DoneSvg } from "./Svgs";
@@ -80,7 +82,7 @@ export const CheckAnswer = ({
                 : "w-full rounded-2xl border-b-4 border-red-600 bg-red-500 p-3 font-bold uppercase text-white transition hover:brightness-105 sm:min-w-[150px] sm:max-w-fit"
             }
           >
-            Continue
+            Continuar
           </button>
         </div>
       </div>

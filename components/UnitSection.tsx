@@ -1,16 +1,13 @@
 "use-client";
 
 import { Fragment, useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
+import { routes } from "@/config/routes";
 import { getTileLeftClassName } from "@/lib/utils";
 import { useBoundStore } from "@/hooks/useBoundStore";
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { HoverLabel } from "@/components/HoverLabel";
 import { TileIcon } from "@/components/TileIcon";
@@ -18,11 +15,10 @@ import { tileStatus } from "@/components/tileStatus";
 import { UnitHeader } from "@/components/UnitHeader";
 
 import type { Unit } from "../utils/courses";
-import { getTileColors } from "./getTileColors";
-import { LessonCompletionSvg } from "./LessonCompletionSvg";
 import { TileTooltip } from "./TileTooltip";
 
 export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
+  const router = useRouter();
   const [selectedTile, setSelectedTile] = useState<null | number>(null);
 
   useEffect(() => {
@@ -41,16 +37,10 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
 
   return (
     <>
-      <UnitHeader
-        unitNumber={unit.unitNumber}
-        description={unit.description}
-        backgroundColor={unit.backgroundColor}
-        borderColor={unit.borderColor}
-      />
+      <UnitHeader unit={unit} />
       <div className="relative mb-8 mt-[67px] flex max-w-2xl flex-col items-center gap-4">
         {unit.subtiles.map((tile, i): JSX.Element => {
           const status = tileStatus(tile, lessonsCompleted);
-          console.log(status);
           return (
             <Fragment key={i}>
               {(() => {
@@ -86,9 +76,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                             tile.type === "fast-forward" &&
                             status === "LOCKED"
                           ) {
-                            // void router.push(
-                            //   `/lesson?fast-forward=${unit.unitNumber}`
-                            // );
+                            void router.push(routes.main.dashboard);
                             return;
                           }
                           setSelectedTile(i);
@@ -144,6 +132,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                 }
               })()}
               <TileTooltip
+                slug={unit.slug}
                 selectedTile={selectedTile}
                 index={i}
                 unitNumber={unit.unitNumber}
