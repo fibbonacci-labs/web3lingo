@@ -1,11 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Course } from "@/utils/courses";
+import { Unit } from "@/utils/courses";
 import {
   CaretSortIcon,
   CheckIcon,
-  PlusCircledIcon,
 } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
@@ -24,11 +23,8 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -37,20 +33,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<
   typeof PopoverTrigger
 >;
 
 interface CourseSwitcherProps extends PopoverTriggerProps {
-  courses: readonly Course[];
+  courses: readonly Unit[];
 }
 
 export default function CourseSwitcher({
@@ -75,12 +64,12 @@ export default function CourseSwitcher({
           >
             <Avatar className="mr-2 h-5 w-5">
               <AvatarImage
-                src={`https://avatar.vercel.sh/${selectedCourse.code}.png`}
-                alt={selectedCourse.name}
+                src={`https://avatar.vercel.sh/${selectedCourse.slug}.png`}
+                alt={selectedCourse.title}
               />
               <AvatarFallback>SC</AvatarFallback>
             </Avatar>
-            {selectedCourse.name}
+            {selectedCourse.title}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
@@ -92,7 +81,7 @@ export default function CourseSwitcher({
               <CommandGroup key={"Courses"} heading="Courses">
                 {courses.map((course) => (
                   <CommandItem
-                    key={course.code}
+                    key={course.slug}
                     onSelect={() => {
                       setCourse(course);
                       setOpen(false);
@@ -101,17 +90,17 @@ export default function CourseSwitcher({
                   >
                     <Avatar className="mr-2 h-5 w-5">
                       <AvatarImage
-                        src={`https://avatar.vercel.sh/${selectedCourse.code}.png`}
-                        alt={course.name}
+                        src={`https://avatar.vercel.sh/${selectedCourse.slug}.png`}
+                        alt={course.title}
                         className="grayscale"
                       />
                       <AvatarFallback>SC</AvatarFallback>
                     </Avatar>
-                    {course.name}
+                    {course.title}
                     <CheckIcon
                       className={cn(
                         "ml-auto h-4 w-4",
-                        selectedCourse.code === course.code
+                        selectedCourse.slug === course.slug
                           ? "opacity-100"
                           : "opacity-0"
                       )}

@@ -31,7 +31,7 @@ export const VerifyAccountEmail = ({
 }: LinearLoginCodeEmailProps) => (
   <Html>
     <Head />
-    <Preview>Verify your account</Preview>
+    <Preview>Verifique su cuenta</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
@@ -41,20 +41,19 @@ export const VerifyAccountEmail = ({
           alt={siteConfig.title}
           style={logo}
         />
-        <Heading style={heading}>Verify your account</Heading>
+        <Heading style={heading}>Verifique su cuenta</Heading>
         <Section style={buttonContainer}>
           <Button pY={11} pX={23} style={button} href={link}>
-            Verify account
+            Verificar mi cuenta
           </Button>
         </Section>
         <Text style={paragraph}>
-          This link will only be valid for the next 6 hours. If the button above
-          does not work, you can use the url directly:
+          Este enlace sólo será válido durante las próximas 6 horas. Si el botón
+          de arriba no funciona, puede utilizar la url directamente:
         </Text>
         <code style={code}>{link}</code>
         <Text style={muted}>
-          If you haven't signed up to {siteConfig.title}, you can safely ignore
-          this email.
+          Si no se ha inscrito en {siteConfig.title}, puede ignorar este correo.
         </Text>
         <Hr style={hr} />
         <Link href={baseUrl} style={reportLink}>
