@@ -11,16 +11,11 @@ interface PageProps {
 }
 
 export default async function Course({ params }: PageProps) {
-  console.log(params);
   const course = courses.find((course) => course.slug === params.slug);
 
   if (!course) {
     notFound();
   }
 
-  return (
-    <section>
-      <Lesson course={course} />
-    </section>
-  );
+  return <Lesson course={course} />;
 }

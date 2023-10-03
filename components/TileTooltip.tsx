@@ -43,7 +43,7 @@ export const TileTooltip = ({
   const unit = units.find((unit) => unit.unitNumber === unitNumber);
   const activeBackgroundColor = unit?.backgroundColor ?? "bg-green-500";
   const activeTextColor = unit?.textColor ?? "text-green-500";
-
+  const courseLink = `/course/${slug}`;
   return (
     <div
       className={[
@@ -91,7 +91,7 @@ export const TileTooltip = ({
         </div>
         {status === "ACTIVE" ? (
           <Link
-            href={`/lesson/${slug}`}
+            href={courseLink}
             className={[
               "flex w-full items-center justify-center rounded-xl border-b-4 border-gray-200 bg-white p-3 uppercase",
               activeTextColor,
@@ -108,7 +108,7 @@ export const TileTooltip = ({
           </button>
         ) : (
           <Link
-            href={`/lesson/${slug}`}
+            href={courseLink}
             className="flex w-full items-center justify-center rounded-xl border-b-4 border-yellow-200 bg-white p-3 uppercase text-yellow-400"
           >
             Practice +5 XP
