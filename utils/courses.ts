@@ -1,3 +1,5 @@
+import { db } from "@/lib/db";
+
 export const currentInitialCourse = 0;
 
 export type Unit = {
@@ -8,7 +10,7 @@ export type Unit = {
   backgroundColor: `bg-${string}`;
   textColor: `text-${string}`;
   borderColor: `border-${string}`;
-  subtiles: Tile[];
+  subUnits: Tile[];
 };
 
 export type Course = {
@@ -118,5 +120,7 @@ export const courses: readonly Course[] = [
 export const defaultCourse: Course = {
   ...(courses[0] as Course),
 } as const;
+
+
 
 export default courses;

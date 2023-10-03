@@ -88,3 +88,48 @@ model Contact {
   email  String
   userId String
 }
+
+model SubUnit {
+  id        String   @id @default(cuid())
+  unitId String
+  unit         Unit     @relation(fields: [unitId], references: [id], onDelete: Cascade)
+
+  type   String
+  description String
+
+  @@index([unitId])
+  @@map(name: "sub_units")
+}
+
+model Unit {
+  id        String   @id @default(cuid())
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @default(now()) @map(name: "updated_at")
+  courseId String
+  course         Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  title   String
+  description  String
+  slug String
+  unitNumber String?
+  backgroundColor String?
+  textColor String?
+  borderColor String?
+  subUnits SubUnit[]
+
+  @@index([courseId])
+  @@map(name: "units")
+}
+
+model Course {
+  id        String   @id @default(cuid())
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @default(now()) @map(name: "updated_at")
+
+  title   String
+  description  String
+  slug String
+  units Unit[]
+
+  @@map(name: "courses")
+}
