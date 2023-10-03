@@ -50,23 +50,23 @@ export function UserNav({
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild className="cursor-pointer">
-          <Link href={routes.dashboard.settings}>Settings</Link>
+          <Link href={routes.dashboard.settings}>Ajustes</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild className="cursor-pointer">
+        {/* <DropdownMenuItem asChild className="cursor-pointer">
           <Link href={routes.dashboard.billing}>Billing</Link>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
         <DropdownMenuSeparator />
-        <DropdownMenuItem
+        {/* <DropdownMenuItem
           className="cursor-pointer"
           onSelect={() => {
             setTheme(resolvedTheme === "light" ? "dark" : "light");
           }}
         >
           Toggle theme
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
         <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer" onSelect={() => signOut()}>
-          Sign out
+        Cerrar sesión
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
