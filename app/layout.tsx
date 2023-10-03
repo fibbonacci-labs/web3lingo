@@ -31,8 +31,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {children}
         <Toaster />
-        <Analytics />
-        {/*  <CrispWithNoSSR /> */}
+       
+        {/*  
+         <Analytics />
+        <CrispWithNoSSR /> 
+        */}
 
        {/*  <Script src="https://api.web3lingo.com/latest.js" />
         <noscript>
