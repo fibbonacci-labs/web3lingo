@@ -121,6 +121,4 @@ export const defaultCourse: Course = {
   ...(courses[0] as Course),
 } as const;
 
-
-
 export default courses;

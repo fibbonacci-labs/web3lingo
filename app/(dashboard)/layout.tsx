@@ -1,8 +1,9 @@
 import { redirect } from "next/navigation";
-import courses from "@/utils/courses";
+import type { Course } from "@/utils/courses";
 
 import { appNavigation, routes } from "@/config/routes";
 import { getSession } from "@/lib/auth";
+import { db } from "@/lib/db";
 import CourseSwitcher from "@/components/course-switcher";
 import { CurrentCourse } from "@/components/CurrentCourse";
 import { MainNav } from "@/components/main-nav";
@@ -12,15 +13,20 @@ interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
+const getCourses = async () => {
+  const courses: Course[] = await db.course.findMany();
+  return courses;
+};
+
 export default async function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
   const session = await getSession();
+  const courses = await getCourses();
 
   if (!session) {
     return redirect(routes.main.signin);
   }
-  console.log(courses);
 
   return (
     <div className="flex min-h-screen flex-col space-y-6">

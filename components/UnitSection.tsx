@@ -38,7 +38,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
     <>
       <UnitHeader unit={unit} />
       <div className="relative mb-8 mt-[67px] flex max-w-2xl flex-col items-center gap-4">
-        {unit.subtiles.map((tile, i): JSX.Element => {
+        {unit.subUnits.map((tile, i): JSX.Element => {
           const status = tileStatus(tile, lessonsCompleted);
           return (
             <Fragment key={i}>
@@ -67,7 +67,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                           getTileLeftClassName({
                             index: i,
                             unitNumber: unit.unitNumber,
-                            tilesLength: unit.subtiles.length,
+                            tilesLength: unit.subUnits.length,
                           }),
                         ].join(" ")}
                         onClick={() => {
@@ -118,7 +118,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                           getTileLeftClassName({
                             index: i,
                             unitNumber: unit.unitNumber,
-                            tilesLength: unit.subtiles.length,
+                            tilesLength: unit.subUnits.length,
                           }),
                         ].join(" ")}
                         onClick={() => {
@@ -145,7 +145,7 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                 selectedTile={selectedTile}
                 index={i}
                 unitNumber={unit.unitNumber}
-                tilesLength={unit.subtiles.length}
+                tilesLength={unit.subUnits.length}
                 description={(() => {
                   switch (tile.type) {
                     case "book":

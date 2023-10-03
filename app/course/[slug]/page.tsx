@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import courses from "@/utils/courses";
+import { type Course } from "@/utils/courses";
 
+import { db } from "@/lib/db";
 import Lesson from "@/components/lesson";
+
+const getCourses = async () => {
+  const courses: Course[] = await db.course.findMany();
+  return courses;
+};
 
 interface PageProps {
   params: {
@@ -11,11 +17,12 @@ interface PageProps {
 }
 
 export default async function Course({ params }: PageProps) {
-  const course = courses.find((course) => course.slug === params.slug);
+  const courses = await getCourses();
+  const currentCourse = courses.find((course) => course.slug === params.slug);
 
-  if (!course) {
+  if (!currentCourse) {
     notFound();
   }
 
-  return <Lesson course={course} />;
+  return <Lesson course={currentCourse} />;
 }

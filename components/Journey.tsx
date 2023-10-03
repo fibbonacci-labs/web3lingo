@@ -9,8 +9,12 @@ import { UnitSection } from "@/components/UnitSection";
 
 import { PracticeExerciseSvg, UpArrowSvg } from "./Svgs";
 
-export const Journey = () => {
-  const course: Course = useBoundStore((x) => x.course);
+interface PageProps {
+  courses: Course[];
+}
+
+export const Journey = ({ courses }: PageProps) => {
+  const course: Course = courses[0] as Course;
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const updateScrollY = () => setScrollY(globalThis.scrollY ?? scrollY);
