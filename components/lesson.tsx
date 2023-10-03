@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { numbersEqual } from "@/utils/array-utils";
-import { Unit } from "@/utils/courses";
+import { Course, Unit } from "@/utils/courses";
 
 import { routes } from "@/config/routes";
 import { LessonComplete } from "@/components/LessonComplete";
@@ -201,7 +201,7 @@ export const lesson3 = {
 const lessons = [lesson1, lesson2, lesson3];
 
 interface PageProps {
-  course: Unit;
+  course: Course;
 }
 
 export default function Lesson({ course }: PageProps) {
