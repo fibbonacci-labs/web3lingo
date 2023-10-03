@@ -20,6 +20,7 @@ export default async function DashboardLayout({
   if (!session) {
     return redirect(routes.main.signin);
   }
+  console.log(courses);
 
   return (
     <div className="flex min-h-screen flex-col space-y-6">

@@ -64,7 +64,6 @@ export default function CourseSwitcher({
                 src={`https://avatar.vercel.sh/${selectedCourse.slug}.png`}
                 alt={selectedCourse.title}
               />
-              <AvatarFallback>SC</AvatarFallback>
             </Avatar>
             {selectedCourse.title}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />

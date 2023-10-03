@@ -1,3 +1,4 @@
+import type { Contact } from "@prisma/client";
 import { PersonIcon } from "@radix-ui/react-icons";
 
 import { db } from "@/lib/db";
@@ -5,13 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AddContactModal } from "@/components/dialogs/add-contact-dialog";
 
 const getContacts = async () => {
-  const result = await db.contact.findMany();
-  return result;
+  const contacts: Contact[] = await db.contact.findMany();
+  return contacts;
 };
 
 export default async function ContactsPage() {
   const contacts = await getContacts();
-
   return (
     <div className="">
       <div className="flex justify-end pb-4">

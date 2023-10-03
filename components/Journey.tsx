@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { type Course } from "@/utils/courses";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
 import { UnitSection } from "@/components/UnitSection";
@@ -9,7 +10,7 @@ import { UnitSection } from "@/components/UnitSection";
 import { PracticeExerciseSvg, UpArrowSvg } from "./Svgs";
 
 export const Journey = () => {
-  const course = useBoundStore((x) => x.course);
+  const course: Course = useBoundStore((x) => x.course);
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const updateScrollY = () => setScrollY(globalThis.scrollY ?? scrollY);
@@ -21,7 +22,14 @@ export const Journey = () => {
   return (
     <div className="flex grow justify-center py-5">
       <div className="flex max-w-sm flex-col">
-        {course && <UnitSection unit={course} key={course.slug} />}
+        {course && (
+          <>
+            {course.units.map((unit) => (
+              <UnitSection unit={unit} key={unit.slug} />
+            ))}
+          </>
+        )}
+
         <div className="sticky bottom-28 left-0 right-0 flex items-end justify-between">
           {/* <Link
             href="/lesson?practice"
