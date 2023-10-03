@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   //const CrispWithNoSSR = dynamic(() => import("@/components/providers/crisp"));
 
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
+    <html lang="es" suppressHydrationWarning className={inter.className}>
       <head />
       <body
         className={cn(
@@ -34,15 +34,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Analytics />
         {/*  <CrispWithNoSSR /> */}
 
-        <Script src="https://api.web3lingo.com/latest.js" />
+       {/*  <Script src="https://api.web3lingo.com/latest.js" />
         <noscript>
-          {/* eslint-disable @next/next/no-img-element */}
+           eslint-disable @next/next/no-img-element 
           <img
             src="https://api.web3lingo.com/noscript.gif"
             alt=""
             referrerPolicy="no-referrer-when-downgrade"
           />
-        </noscript>
+        </noscript> 
+        */}
+
       </body>
     </html>
   );
