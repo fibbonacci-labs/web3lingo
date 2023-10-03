@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { numbersEqual } from "@/utils/array-utils";
-import { Course, Unit } from "@/utils/courses";
+import type { Course } from "@prisma/client";
 
 import { routes } from "@/config/routes";
 import { LessonComplete } from "@/components/LessonComplete";

@@ -14,7 +14,8 @@ interface DashboardLayoutProps {
 }
 
 const getCourses = async () => {
-  const courses: Course[] = await db.course.findMany();
+  const coursesFromDb = await db.course.findMany();
+  const courses: readonly Course[] = [...coursesFromDb];
   return courses;
 };
 

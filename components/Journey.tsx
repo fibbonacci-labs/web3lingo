@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { type Course } from "@/utils/courses";
 
 import { useBoundStore } from "@/hooks/useBoundStore";
@@ -26,7 +25,7 @@ export const Journey = ({ courses }: PageProps) => {
   return (
     <div className="flex grow justify-center py-5">
       <div className="flex max-w-sm flex-col">
-        {course && (
+        {course.units && (
           <>
             {course.units.map((unit) => (
               <UnitSection unit={unit} key={unit.slug} />

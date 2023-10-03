@@ -19,7 +19,7 @@ export const createLessonSlice: BoundStateCreator<LessonSlice> = (set) => ({
       const lessonsPerTile = 4;
       const totalLessonsToJumpToUnit = units
         .filter((unit) => unit.unitNumber < unitNumber)
-        .map((unit) => unit.subtiles.length * lessonsPerTile)
+        .map((unit) => unit.subUnits.length * lessonsPerTile)
         .reduce((a, b) => a + b, 0);
       return {
         lessonsCompleted: Math.max(lessonsCompleted, totalLessonsToJumpToUnit),

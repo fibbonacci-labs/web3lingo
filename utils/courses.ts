@@ -1,5 +1,3 @@
-import { db } from "@/lib/db";
-
 export const currentInitialCourse = 0;
 
 export type Unit = {
@@ -17,7 +15,7 @@ export type Course = {
   title: string;
   description: string;
   slug: string;
-  units: Unit[];
+  units?: Unit[];
 };
 
 export type Tile =
@@ -39,7 +37,7 @@ export const units: readonly Unit[] = [
     backgroundColor: "bg-primary",
     textColor: "text-[#3B0764]",
     borderColor: "border-[#6B21A8]",
-    subtiles: [
+    subUnits: [
       {
         type: "star",
         description: "Qué es Blockchain?",
@@ -63,7 +61,7 @@ export const units: readonly Unit[] = [
     backgroundColor: "bg-primary",
     textColor: "text-[#3B0764]",
     borderColor: "border-[#6B21A8]",
-    subtiles: [
+    subUnits: [
       {
         type: "star",
         description: "Introduction to Cryptography",
@@ -89,7 +87,7 @@ export const units: readonly Unit[] = [
     backgroundColor: "bg-primary",
     textColor: "text-[#3B0764]",
     borderColor: "border-[#6B21A8]",
-    subtiles: [
+    subUnits: [
       {
         type: "star",
         description: "Nodes and Protocols",

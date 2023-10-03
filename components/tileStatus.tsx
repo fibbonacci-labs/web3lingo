@@ -9,7 +9,7 @@ export const tileStatus = (
 ): TileStatus => {
   const lessonsPerTile = 4;
   const tilesCompleted = Math.floor(lessonsCompleted / lessonsPerTile);
-  const tiles = units.flatMap((unit) => unit.subtiles);
+  const tiles = units.flatMap((unit) => unit.subUnits);
   const tileIndex = tiles.findIndex((t) => t === tile);
   if (tileIndex < tilesCompleted) {
     return "COMPLETE";

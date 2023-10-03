@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { type Course } from "@/utils/courses";
+import type { Course } from "@prisma/client";
 
 import { db } from "@/lib/db";
 import Lesson from "@/components/lesson";
