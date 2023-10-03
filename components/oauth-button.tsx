@@ -41,7 +41,9 @@ export const OauthButton = ({
       }}
     >
       <div className="hover:text-gray-12 flex items-center pr-3">{icon}</div>
-      <span className="text-gray-12">Iniciar sesión con {capitalize(provider)}</span>
+      <span className="text-gray-12">
+        Iniciar sesión con {capitalize(provider)}
+      </span>
     </Button>
   );
 };

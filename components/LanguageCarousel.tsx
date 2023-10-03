@@ -114,7 +114,7 @@ export const LanguageCarousel = () => {
                 href={"/wallets"}
                 onClick={() => setCourse(course)}
               >
-               {/*  <ThemeIcon course={course} width={40} /> */}
+                {/*  <ThemeIcon course={course} width={40} /> */}
                 <span className="text-sm font-bold uppercase">
                   {course.title}
                 </span>

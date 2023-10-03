@@ -2,10 +2,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 import { routes } from "@/config/routes";
-import { siteConfig } from "@/config/site";
 import { buttonVariants } from "@/components/ui/button";
-import { Logo } from "@/components/icons/logo";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function MarketingLayout(props: { children: React.ReactNode }) {
   return (

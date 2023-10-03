@@ -2,17 +2,13 @@ import { Unit } from "@/utils/courses";
 
 import { GuidebookSvg } from "./Svgs";
 
-export const UnitHeader = ({
-  unit
-}: {
-  unit: Unit
-}) => {
-
+export const UnitHeader = ({ unit }: { unit: Unit }) => {
   return (
     <article
-      className={["max-w-2xl text-white sm:rounded-xl", unit.backgroundColor].join(
-        " "
-      )}
+      className={[
+        "max-w-2xl text-white sm:rounded-xl",
+        unit.backgroundColor,
+      ].join(" ")}
     >
       <header className="flex items-center justify-between gap-4 p-4">
         <div className="flex flex-col gap-1">

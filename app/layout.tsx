@@ -31,13 +31,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {children}
         <Toaster />
-       
+
         {/*  
          <Analytics />
         <CrispWithNoSSR /> 
         */}
 
-       {/*  <Script src="https://api.web3lingo.com/latest.js" />
+        {/*  <Script src="https://api.web3lingo.com/latest.js" />
         <noscript>
            eslint-disable @next/next/no-img-element 
           <img
@@ -47,7 +47,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           />
         </noscript> 
         */}
-
       </body>
     </html>
   );

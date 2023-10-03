@@ -5,7 +5,7 @@ import courses from "@/utils/courses";
 import Lesson from "@/components/lesson";
 
 interface PageProps {
-  params: { 
+  params: {
     slug: string;
   };
 }

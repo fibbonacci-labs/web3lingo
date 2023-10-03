@@ -48,7 +48,7 @@ export const TopBar = ({
             setMenu((x) => (x === "LANGUAGES" ? "HIDDEN" : "LANGUAGES"))
           }
         >
-         {/*  <ThemeIcon course={course} width={45} /> */}
+          {/*  <ThemeIcon course={course} width={45} /> */}
           <span className="sr-only">See courses</span>
         </button>
 
@@ -95,7 +95,7 @@ export const TopBar = ({
                   <div className="flex gap-5 p-5">
                     <div className="flex flex-col items-center justify-between gap-2">
                       <div className="rounded-2xl border-4 border-blue-400">
-                      {/*   <ThemeIcon course={course} width={80} /> */}
+                        {/*   <ThemeIcon course={course} width={80} /> */}
                       </div>
                       <span className="font-bold">{course.title}</span>
                     </div>

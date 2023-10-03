@@ -2,10 +2,7 @@
 
 import * as React from "react";
 import { Unit } from "@/utils/courses";
-import {
-  CaretSortIcon,
-  CheckIcon,
-} from "@radix-ui/react-icons";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { useBoundStore } from "@/hooks/useBoundStore";

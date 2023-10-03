@@ -111,9 +111,11 @@ export function UserSignupForm() {
                 )}
               />
             </div>
-            <Button 
-            variant="primary"
-            isLoading={form.formState.isSubmitting} disabled={disabled}>
+            <Button
+              variant="primary"
+              isLoading={form.formState.isSubmitting}
+              disabled={disabled}
+            >
               Sign up with Email
             </Button>
           </div>
@@ -137,7 +139,7 @@ export function UserSignupForm() {
         setLoading={setGoogleLoading}
         isLoading={googleLoading}
       />
-     {/*  <OauthButton
+      {/*  <OauthButton
         text="Sign up with Github"
         icon={<GithubIcon className="h-4 w-4" />}
         isDisabled={disabled}

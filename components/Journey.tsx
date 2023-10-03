@@ -28,7 +28,7 @@ export const Journey = () => {
             className="absolute left-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-b-4 border-gray-200 bg-white transition hover:bg-gray-50 hover:brightness-90 md:left-0"
           >
             <span className="sr-only">Practice exercise</span>
-            <PracticeExerciseSvg className="h-8 w-8" />
+            {/*   <PracticeExerciseSvg className="h-8 w-8" /> */}
           </Link>
           {scrollY > 100 && (
             <button

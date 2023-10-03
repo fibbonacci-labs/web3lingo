@@ -1,6 +1,5 @@
 export const currentInitialCourse = 0;
 
-
 export type Unit = {
   title: string;
   unitNumber: number;
@@ -86,12 +85,8 @@ export const units: readonly Unit[] = [
   },
 ];
 
-
 export const defaultCourse: Unit = {
-  ...units[0] as Unit
+  ...(units[0] as Unit),
 } as const;
-
-
-
 
 export default units;

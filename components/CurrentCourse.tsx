@@ -100,5 +100,4 @@ export const CurrentCourse = () => {
       </span>
     </article>
   );
- 
 };

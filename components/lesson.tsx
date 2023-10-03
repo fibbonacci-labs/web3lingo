@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { numbersEqual } from "@/utils/array-utils";
+import { Unit } from "@/utils/courses";
 
 import { routes } from "@/config/routes";
 import { LessonComplete } from "@/components/LessonComplete";
@@ -14,7 +15,6 @@ import { LessonFastForwardStart } from "@/components/LessonFastForwardStart";
 import { ProblemSelect1Of3 } from "@/components/ProblemQuiz";
 import { ProblemWriteInEnglish } from "@/components/ProblemWriteInEnglish";
 import { QuestionResult } from "@/components/QuestionResult";
-import { Unit } from "@/utils/courses";
 
 export const lesson1 = {
   type: "QUIZ",
@@ -204,8 +204,7 @@ interface PageProps {
   course: Unit;
 }
 
-
-export default function Lesson({ course } : PageProps) {
+export default function Lesson({ course }: PageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 

@@ -6,17 +6,15 @@ import { useRouter } from "next/navigation";
 import { routes } from "@/config/routes";
 import { getTileLeftClassName } from "@/lib/utils";
 import { useBoundStore } from "@/hooks/useBoundStore";
-import {
-  Card,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { HoverLabel } from "@/components/HoverLabel";
 import { TileIcon } from "@/components/TileIcon";
 import { tileStatus } from "@/components/tileStatus";
 import { UnitHeader } from "@/components/UnitHeader";
 
 import type { Unit } from "../utils/courses";
-import { TileTooltip } from "./TileTooltip";
 import { getTileColors } from "./getTileColors";
+import { TileTooltip } from "./TileTooltip";
 
 export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
   const router = useRouter();
@@ -95,12 +93,17 @@ export const UnitSection = ({ unit }: { unit: Unit }): JSX.Element => {
                           />
                         ) : null}
 
-                        <div className={["m-3 flex  p-4 ",
-                      /* getTileColors({
+                        <div
+                          className={[
+                            "m-3 flex  p-4 ",
+                            /* getTileColors({
                         tileType: tile.type,
                         status,
                         defaultColors: `${unit.borderColor} ${unit.backgroundColor}`,
-                      }) */,].join(" ")}>
+                      }) */
+                            ,
+                          ].join(" ")}
+                        >
                           <TileIcon tileType={tile.type} status={status} />
                           <p className="px-2 font-bold">{tile.description}</p>
                           <span className="sr-only">Show lesson</span>

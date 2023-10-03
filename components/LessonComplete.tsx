@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { formatTime } from "@/utils/dateString";
 
+import { routes } from "@/config/routes";
 import { useBoundStore } from "@/hooks/useBoundStore";
 import { QuestionResult } from "@/components/QuestionResult";
 import { ReviewLesson } from "@/components/ReviewLesson";
-import { routes } from "@/config/routes";
 
 export const LessonComplete = ({
   correctAnswerCount,
@@ -78,7 +78,7 @@ export const LessonComplete = ({
             className={
               "flex w-full items-center justify-center rounded-2xl border-b-4 border-purple-600 bg-purple-500 p-3 font-bold uppercase text-white transition hover:brightness-105 sm:min-w-[150px] sm:max-w-fit"
             }
-            href={routes.main.dashboard}
+            href="/dashboard"
             onClick={() => {
               increaseXp(correctAnswerCount);
               addToday();

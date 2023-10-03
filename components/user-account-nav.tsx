@@ -66,7 +66,7 @@ export function UserNav({
         </DropdownMenuItem> */}
         <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer" onSelect={() => signOut()}>
-        Cerrar sesión
+          Cerrar sesión
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
