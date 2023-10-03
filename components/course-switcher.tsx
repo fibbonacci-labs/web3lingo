@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Unit } from "@/utils/courses";
+import { Course, Unit } from "@/utils/courses";
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
@@ -36,7 +36,7 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 >;
 
 interface CourseSwitcherProps extends PopoverTriggerProps {
-  courses: readonly Unit[];
+  courses: readonly Course[];
 }
 
 export default function CourseSwitcher({
